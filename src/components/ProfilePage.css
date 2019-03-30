@@ -1,0 +1,101 @@
+.container{
+    margin-left: 0%;
+    margin-right: 0%;
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#profile-head{
+    display: flex;
+    flex-direction: row;
+}
+
+#photo-name-role{
+
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    height: auto;
+
+}
+
+.distance-rating{
+    width: 30%;
+}
+
+h2{
+    color: white;
+}
+.card{
+    background-color: aqua;
+    border-radius: 10px;
+    box-shadow: 1px;
+    padding: 10px 20px;
+}
+
+.profile-photo{
+    width:15%;
+    height:100%;;
+    border-radius: 50%;
+
+}
+
+.name-profile{
+    margin-left: 10%;
+}
+
+.distance-rating{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.profile-body{
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-credentials-skill{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.profile-workexp{
+    width: 50%;
+}
+
+.card-row{
+    margin-left: 3%;
+    display: flex;
+    align-content: flex-start;
+}
+
+.profile-credentials-skill{
+    margin-right: 3%;
+}
+
+.profile-workexp-title{
+    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+}
+
+#work-expereince-card{
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+}
+
+.profile-workexp-card{
+    margin-top: 2%;
+}
+
+.cardContainer{
+    margin-top: 3%;
+}
