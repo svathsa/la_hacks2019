@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-// import dummy components
+// import components
 import Login from './components/Login'
 import Home from './components/Home'
+import LeadPage from './components/LeadPage'
+import Team from './components/Team'
 // Will be used to implement Redux
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
@@ -14,6 +16,8 @@ class App extends Component {
           <Switch>
           <Route exact path='/' component={Login} ></Route>
           <Route exact path='/home' component={Home} ></Route>
+          <Route exact path='/leadpage' component={LeadPage} ></Route>
+          <Route exact path='/team/:team_id' component={Team} ></Route>
           </Switch>
         </div>
       </BrowserRouter>
