@@ -6,6 +6,7 @@ import Home from './components/Home'
 import LeadPage from './components/LeadPage'
 import Team from './components/Team'
 import ProfilePage from './components/ProfilePage'
+import BigProfilePage from './components/BigProfilePage'
 // Will be used to implement Redux
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
@@ -19,7 +20,7 @@ class App extends Component {
           <Route exact path='/home' component={Home} ></Route>
           <Route exact path='/leadpage' component={LeadPage} ></Route>
           <Route exact path='/team/:team_id' component={Team} ></Route>
-          <Route exact path='/profile/:profile_id' component={ProfilePage} ></Route>
+          <Route exact path='/profile/:profile_id' component={BigProfilePage} ></Route>
           </Switch>
         </div>
       </BrowserRouter>
