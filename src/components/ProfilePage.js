@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar'
-import firebase from '../firebase';
+import firebase from 'firebase';
+import base, {firebaseApp} from '../components/Firebase/firebase'
 import './ProfilePage.css';
 
 function mapObject(object, callback) {
@@ -97,9 +98,9 @@ class ProfilePage extends Component {
                         <div className ="card" id="profile-skill">
                         <div className="card-row"><h3>Skills</h3></div>
                         <div className="work-experience">{mapObject(this.state.profile.skills, function (key, value) {
-                                return <div className="card-row">{value}</div>;
+                                return <div className="card-row" key={key} >{value}</div>;
                             })}</div>
-                        </div>
+                        </div> 
                         </div>
                         
                         </div>
@@ -110,13 +111,13 @@ class ProfilePage extends Component {
                     {
                     
                     mapObject(this.state.profile.work_experience, function (key, value) {
-                    return <div className="profile-workexp-card">
-                                <div class="card">
-                                <div class="card-body">
-                                    <div class="card-row"><h4 class="card-title">{value.title}</h4></div>
-                                    <div class="card-row"><h5>Duration: {value.duration}</h5></div>
-                                    <div class="card-row"><h5>Location: {value.place}</h5></div>
-                                    <div class="card-row"><p class="card-text">{value.description}.</p></div>
+                    return <div className="profile-workexp-card" key={key}>
+                                <div className="card">
+                                <div className="card-body">
+                                    <div className="card-row"><h4 className="card-title">{value.title}</h4></div>
+                                    <div className="card-row"><h5>Duration: {value.duration}</h5></div>
+                                    <div className="card-row"><h5>Location: {value.place}</h5></div>
+                                    <div className="card-row"><p className="card-text">{value.description}.</p></div>
                                 </div>
                                 </div>
                             </div>
