@@ -5,7 +5,7 @@ import './Login.css'
 class Login extends Component {
     render() {
         return(
-            <div class="container login">
+            <div class="login">
                 <div class="d-flex justify-content-center h-100">
                 <div class="user_card">
                     <div class="d-flex justify-content-center">

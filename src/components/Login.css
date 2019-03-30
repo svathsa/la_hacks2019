@@ -1,7 +1,6 @@
-body {
+.login {
     margin: 0;
     padding: 0;
-    height: 100%;
     background-image: linear-gradient(to right, rgba(39, 76, 119, 1), rgba(63, 119, 184)) !important;
   }
   
