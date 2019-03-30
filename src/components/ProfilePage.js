@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Navbar from './Navbar'
 
 class ProfilePage extends Component {
     // API Call to find data using the id above 
@@ -8,6 +9,7 @@ class ProfilePage extends Component {
         let id = this.props.match.params.profile_id;
         return (
             <div className="post">
+                <Navbar />
                 <img src="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg" alt=""/>
                 <h3 className="center">Jack Davidson</h3>
                 <p>Editor</p>
