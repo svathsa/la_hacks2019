@@ -28,6 +28,7 @@ class Login extends Component {
                     age: "",
                     role: "",
                     zip: "",
+                    rating: "",
                     links: null,
                     skills: null, 
                     work_experience: null
