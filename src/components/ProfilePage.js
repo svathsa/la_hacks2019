@@ -4,9 +4,13 @@ import firebase from '../firebase';
 import './ProfilePage.css';
 
 function mapObject(object, callback) {
+    if(object != null){
     return Object.keys(object).map(function (key) {
       return callback(key, object[key]);
     });
+    }else{
+        
+    }
   }
 
 
@@ -25,8 +29,8 @@ class ProfilePage extends Component {
         }).then((snapshot) => {
             this.setState({
                 profile: snapshot.val()
-            });
-            console.log(this.state);
+            })
+            
         })
         
         // API Call to find data using the id above 
