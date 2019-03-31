@@ -60,6 +60,7 @@ class SuggestionProfileCard extends Component {
 
     render() {
         var refer=this;
+        var text='mailto:' + refer.state.email;
         return(
                 <div className="card profile-card" id="profile-card">
                     <div className="card-body row">
@@ -69,7 +70,9 @@ class SuggestionProfileCard extends Component {
                         <p className="card-text">{refer.state.name}</p>
                     </div>
                     <div className="col-md-1">
+                    <a href={text}>
                         <i class="far fa-envelope"></i>
+                    </a>
                     </div>
                     <div className="col-md-1">
                         <i class="fas fa-plus" onClick={refer.addToTeam} ></i>
