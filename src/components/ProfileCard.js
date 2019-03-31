@@ -26,7 +26,25 @@ class ProfileCard extends Component {
     }
 
     removeFromTeam(){
-
+        var refer=this;
+        firebase.database().ref('Teams/'+refer.props.team+'/roles/'+refer.props.role).once('value').then(async (snapshot)=>{
+            console.log(snapshot.val());
+            let result= await snapshot.val();
+            var found = false;
+            var goldenkey;
+            mapObject(result, function (key, value) {
+                if(value==refer.state.id)
+                    found=true;
+                    goldenkey=key;
+                })
+            if(found==true)
+            {
+                var updates ={};
+                updates['Teams/'+refer.props.team+'/roles/'+refer.props.role+'/'+goldenkey]=null;
+                firebase.database().ref().update(updates);
+                window.location.reload();
+            }
+        });
     }
 
     render() {
