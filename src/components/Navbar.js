@@ -30,10 +30,12 @@ class Navbar extends Component {
         console.log(this.props);
         return(
             <div className="navbar">
-                <nav className="navbar navbar-expand-lg">
+                <nav className="navbar-nav navbar-expand-lg">
+                
                     <ul className="navbar-nav">
-                        <Link to="/home" className="nav-link" href="#"><span className ="homebrand">Home</span></Link>
+                        <Link to="/home" className="nav-link" href="#"><span className ="homebrand">Filmly Home</span></Link>
                     </ul>
+                
                     <button
                     className="navbar-toggler"
                     type="button"
@@ -47,17 +49,18 @@ class Navbar extends Component {
                     <div
                     id="navbarNavDropdown"
                     className="navbar-collapse collapse">
-    <ul className="navbar-nav navbar-right ml-auto">
-        <li className="nav-item">
-            <a
-            className="nav-link"
-            href="#">
-                <i className="fas fa-bell fa-lg"></i>
-            </a>   
-        </li>
-        <li className="nav-item">
-            <Link to="/home" className="nav-link">
-                <i className="fas fa-envelope fa-lg"></i>
+
+                    <ul className="navbar-nav navbar-right">
+                        <li className="nav-item">
+                            <a
+                            className="nav-link"
+                             href="#">
+                        <i className="fas fa-bell fa-lg"></i>
+                            </a>   
+                        </li>
+                     <li className="nav-item">
+                            <Link to="/home" className="nav-link">
+                    <i className="fas fa-envelope fa-lg"></i>
             </Link>
         </li>
         {/* Experimental Code Below */}

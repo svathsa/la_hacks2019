@@ -1,51 +1,22 @@
 .fas {
-
-    color: 
-    rgba(220, 
-    225, 222, 
-    1);
+    color:  rgba(220, 225, 222, 1);  
+}
     
-    }
+.homebrand{    
+    color: rgba(220, 225, 222, 1);  
+    font-family: 'Major Mono Display', monospace; 
+    font-weight: bold;
+    font-size: 1.5em;  
+}
     
-    .homebrand{
+a, a:hover, a:active, a:visited, a:focus {   
+    text-decoration:none;  
+}
     
-    color: 
-    rgba(220, 
-    225, 222, 
-    1);
+.homebrand:hover, .fas:hover {   
+    opacity: 0.5;
+}
     
-    font-family: 
-    'Major Mono Display', monospace;
-    
-    font-weight: 
-    bold;
-    
-    font-size: 
-    1.5em;
-    
-    }
-    
-    a, 
-    a:hover, a:active, 
-    a:visited, a:focus {
-    
-    text-decoration:none;
-    
-    }
-    
-    .homebrand:hover, 
-    .fas:hover {
-    
-    opacity: 
-    0.5;
-    
-    }
-    
-    .navbar {
-    
-    background-color: 
-    rgba(139, 
-    140, 137, 
-    1);
-    
-    }
+.navbar {
+    background: linear-gradient(to right,rgba(39, 76, 119, 1),  rgba(139, 140, 137, 1));
+}
