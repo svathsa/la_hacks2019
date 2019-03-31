@@ -3,8 +3,15 @@
 import React, {Component} from 'react'
 import firebase from 'firebase';
 class AddTeam extends Component {
-    state = {
-        name: '',
+    
+    constructor(props){
+        super(props);
+        this.state = {
+            name: '',
+            unq: ''
+        }
+
+        this.addTeamTodatabase = this.addTeamTodatabase.bind(this);
     }
     handleChange = (e) => {
         this.setState({
@@ -12,10 +19,15 @@ class AddTeam extends Component {
         })
     }
     addTeamTodatabase(name){
+        var refer= this;
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 var date= new Date();
                 var unique= date.getTime().toString();
+                refer.setState({
+                    name: refer.state.name,
+                    unq: user.uid + unique
+                })
                 firebase.database().ref('Teams/' + user.uid + unique).set({
                     name: name,
                     lead: user.uid,
@@ -29,7 +41,25 @@ class AddTeam extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addTeam(this.state);
+        var tempId='';
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                tempId=user.uid;
+            } else {
+              // No user is signed in.
+            }
+        });
+        var tempObj={
+            key: this.state.unq,
+            value:{
+                name: this.state.name,
+                lead: tempId,
+                isFinal: "false",
+                roles: null
+            }
+            
+        }
+        this.props.addTeam(tempObj);
         this.addTeamTodatabase(this.state.name);
         this.setState({
             name: ''
