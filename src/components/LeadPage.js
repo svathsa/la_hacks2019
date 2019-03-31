@@ -31,7 +31,6 @@ class LeadPage extends Component {
         }
 
         this.handleAddRole=this.handleAddRole.bind(this);
-        this.handleRemoveRole = this.handleRemoveRole.bind(this);
     }
     AddRoleToDatabase(roleName) {        
         firebase.database().ref('Teams/' + this.state.teamID + '/roles').set({
@@ -78,11 +77,8 @@ class LeadPage extends Component {
     }
     render() {
         var refer= this;
-    const componentToBeRendered = this.state.addRole ? (
-        <div className="outer-container">
-        <div className="closeButtonContainer"><button className="closeButton" onClick={this.handleRemoveRole}>CLOSE</button></div>
-        <RoleSuggestions teamid = {this.state.teamID}  />
-        </div>
+    const componentToBeRendered = refer.state.addRole ? (
+        <RoleSuggestions teamid = {refer.state.teamID}  />
     ) : (
         refer.state.addMember ? (
             <SuggestionPane role={refer.state.memberRole} teamID={this.state.teamID}/>
@@ -106,7 +102,6 @@ class LeadPage extends Component {
 
                     </div>
                     <div className="main-panel">
-                    
                             {componentToBeRendered}
                     </div>
                 </div>
