@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import './ProfileCard.css'
+import './SuggestionProfileCard.css'
 import PropTypes from 'prop-types';
 import firebase from 'firebase';
 import base, {firebaseApp} from '../components/Firebase/firebase'
-
-
 
 function mapObject(object, callback) {
     if(object != null){
@@ -16,12 +14,12 @@ function mapObject(object, callback) {
     }
   }
 
-class ProfileCard extends Component {
+class SuggestionProfileCard extends Component {
 
     constructor(props){
 		super(props);
         this.state={id: this.props.id, name: "", email: "", photoURL: ""};
-        this.removeFromTeam= this.removeFromTeam.bind(this);
+        this.addToTeam=this.addToTeam.bind(this);
     }
     
     componentDidMount(){
@@ -29,7 +27,6 @@ class ProfileCard extends Component {
             console.log(snapshot.val());
             let user= await snapshot.val();
             this.setState({
-                // TODO: ERROR IS CAUSED HERE
                 id: this.props.id, 
                 name: user.name,
                 email: user.email,
@@ -38,23 +35,23 @@ class ProfileCard extends Component {
         });
     }
 
-    removeFromTeam(){
+    addToTeam(){
         var refer=this;
         firebase.database().ref('Teams/'+refer.props.team+'/roles/'+refer.props.role).once('value').then(async (snapshot)=>{
             console.log(snapshot.val());
             let result= await snapshot.val();
             var found = false;
-            var goldenkey;
             mapObject(result, function (key, value) {
-                if(value==refer.state.id){
+                if(value==refer.state.id)
                     found=true;
-                    goldenkey=key;
-                }
                 })
-            if(found==true)
+            if(found==false)
             {
                 var updates ={};
-                updates['Teams/'+refer.props.team+'/roles/'+refer.props.role+'/'+goldenkey]=null;
+                var date = new Date();
+                var timestamp = date.getTime();
+                var uniqueid= timestamp.toString();
+                updates['Teams/'+refer.props.team+'/roles/'+refer.props.role+'/'+uniqueid]=refer.state.id;
                 firebase.database().ref().update(updates);
                 window.location.reload();
             }
@@ -67,24 +64,22 @@ class ProfileCard extends Component {
         return(
                 <div className="card profile-card" id="profile-card">
                     <div className="card-body row">
-                            <img className="profile-card-image" src={this.state.photoURL} alt="Card image cap" />
+                            <img className="profile-card-image" src={refer.state.photoURL} alt="Card image cap" />
                     </div>
                     <div className="col-md-8">
-                        <p className="card-text">{this.state.name}</p>
+                        <p className="card-text">{refer.state.name}</p>
                     </div>
                     <div className="col-md-1">
-                        <a href={text}>
-                        <i class="far fa-envelope" >
-                        
-                        </i>
-                        </a>
+                    <a href={text}>
+                        <i class="far fa-envelope"></i>
+                    </a>
                     </div>
                     <div className="col-md-1">
-                        <i class="fas fa-trash" onClick={refer.removeFromTeam}></i>
+                        <i class="fas fa-plus" onClick={refer.addToTeam} ></i>
                     </div>
                 </div>
         )
     }
 }
 
-export default ProfileCard
+export default SuggestionProfileCard
