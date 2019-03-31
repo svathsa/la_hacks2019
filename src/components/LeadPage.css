@@ -4,12 +4,30 @@
 }
 
 .side-panel{
-    height: 800px; /* or any value */
+    height: 870px; /* or any value */
     overflow-y: auto;
     display: flex;
     flex-direction: column;
 
 }
+
+.side-panel-container{
+    width: 30%;
+}
 .main-panel{
     width: 70%;
+}
+
+.some-container{
+    width: 100%;
+}
+
+.role-card-container{
+    margin-top: 3%;
+    margin-left: 3%;
+    margin-right: 4%;
+}
+
+.add-role-button{
+    width: 100%;
 }
