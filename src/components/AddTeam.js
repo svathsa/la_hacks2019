@@ -1,5 +1,7 @@
-import React, {Component} from 'react'
 
+
+import React, {Component} from 'react'
+import firebase from 'firebase';
 class AddTeam extends Component {
     state = {
         name: '',
@@ -9,9 +11,26 @@ class AddTeam extends Component {
             name: e.target.value
         })
     }
+    addTeamTodatabase(name){
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                var date= new Date();
+                var unique= date.getTime().toString();
+                firebase.database().ref('Teams/' + user.uid + unique).set({
+                    name: name,
+                    lead: user.uid,
+                    isFinal: "false",
+                    roles: null
+                })
+            } else {
+              // No user is signed in.
+            }
+          });
+    }
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.addTeam(this.state);
+        this.addTeamTodatabase(this.state.name);
         this.setState({
             name: ''
         });

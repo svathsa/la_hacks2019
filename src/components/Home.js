@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar'
-import RoleCard from './RoleCard';
 import TeamButtons from './TeamButton'
+import firebase from 'firebase'
 import AddTeam from './AddTeam'
 import './Home.css'
 
 class Home extends Component {
     state = {
-        teams: [
-          {'id':1, 'name':'Suraj\'s Team'},
-          {'id':2, 'name':'Neeraj\'s Team'}
-        ]
+        teams: []
+    }
+    componentDidMount(){
+        
     }
     addTeam = (team) => {
     team.id = Math.random();
@@ -20,7 +20,7 @@ class Home extends Component {
     });
     }
     render() {
-        return(
+            return(
             <div className="home">
                 <Navbar />
                 <div className = "homepage">
@@ -43,3 +43,4 @@ class Home extends Component {
 }
 
 export default Home
+
