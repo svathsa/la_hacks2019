@@ -9,6 +9,7 @@ import ProfilePage from './components/ProfilePage'
 import BigProfilePage from './components/BigProfilePage'
 // Will be used to implement Redux
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Navbar from './components/Navbar';
 
 class App extends Component {
   render() {

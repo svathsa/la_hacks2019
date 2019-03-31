@@ -22,7 +22,11 @@ class Post extends Component {
                 <p>{this.props.post.body}</p>
             </div>
         ) : (
-            <div className="center">Loading post...</div>
+            <div className="center">
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            </div>
         )
         return (
             <div className="container">
