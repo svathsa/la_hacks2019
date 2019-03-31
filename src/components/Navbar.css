@@ -1,5 +1,5 @@
 .extra-box-fill{
-    width: 80vw;
+    width: 87vw;
 }
 .fas {
     color:  rgba(220, 225, 222, 1);  
@@ -7,7 +7,7 @@
     
 .homebrand{    
     color: rgba(220, 225, 222, 1);  
-    font-family: 'Major Mono Display', monospace; 
+    font-family: 'Dancing Script', cursive; 
     font-weight: bold;
     font-size: 1.5em;  
 }
