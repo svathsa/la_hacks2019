@@ -47,11 +47,15 @@ class RoleSuggestions extends Component {
         return(
             <div className="parent-container">
                <ul class="list-group">
-                <li class="list-group-item"><button className="role1"  onClick={this.AddRoleToDatabase.bind(this,"role1")}>Role 1</button></li>
-                <li class="list-group-item"><button className="role2" onClick={this.AddRoleToDatabase.bind(this,"role2")}>Role 2</button></li>
-                <li class="list-group-item"><button className="role3"  onClick={this.AddRoleToDatabase.bind(this,"role3")}>Role 3</button></li>
-                <li class="list-group-item"><button className="role4" onClick={this.AddRoleToDatabase.bind(this,"role4")}>Role 4</button></li>
-                <li class="list-group-item"><button className="role5"  onClick={this.AddRoleToDatabase.bind(this,"role5")}>Role 5</button></li>
+                <li class="list-group-item"><button className="role"  onClick={this.AddRoleToDatabase.bind(this,"Producer")}>Producer</button></li>
+                <li class="list-group-item"><button className="role" onClick={this.AddRoleToDatabase.bind(this,"Director")}>Director</button></li>
+                <li class="list-group-item"><button className="role"  onClick={this.AddRoleToDatabase.bind(this,"Actor")}>Actor</button></li>
+                <li class="list-group-item"><button className="role" onClick={this.AddRoleToDatabase.bind(this,"Writer")}>Writer</button></li>
+                <li class="list-group-item"><button className="role"  onClick={this.AddRoleToDatabase.bind(this,"Editor")}>Editor</button></li>
+                <li class="list-group-item"><button className="role"  onClick={this.AddRoleToDatabase.bind(this,"Cinematographer")}>Cinematographer</button></li>
+                <li class="list-group-item"><button className="role" onClick={this.AddRoleToDatabase.bind(this,"Stuntman")}>Stuntman</button></li>
+                <li class="list-group-item"><button className="role"  onClick={this.AddRoleToDatabase.bind(this,"Make-up Artist")}>Make-up Artist</button></li>
+                <li class="list-group-item"><button className="role" onClick={this.AddRoleToDatabase.bind(this,"Music Director")}>Music Director</button></li>
                </ul>
             </div>
         )
