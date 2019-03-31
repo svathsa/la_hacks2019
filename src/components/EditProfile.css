@@ -40,6 +40,11 @@ input[type=text] {
     width : 200px;
 }
 
+.update-profile-submit:hover{
+    opacity:1;
+    color: white;
+}
+
 input[type=submit] {
     background-color: #34c906;
     border: none;
