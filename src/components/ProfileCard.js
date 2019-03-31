@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './ProfileCard.css'
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import firebase from 'firebase';
 import base, {firebaseApp} from '../components/Firebase/firebase'
@@ -70,7 +71,7 @@ class ProfileCard extends Component {
                             <img className="profile-card-image" src={this.state.photoURL} alt="Card image cap" />
                     </div>
                     <div className="col-md-8">
-                        <p className="card-text">{this.state.name}</p>
+                        <Link to={"/profile/"+refer.state.id}><p className="card-text">{this.state.name}</p></Link>
                     </div>
                     <div className="col-md-1">
                         <a href={text}>
