@@ -19,9 +19,9 @@ const TeamButtons = ({teams}) => {
     const teamList = teams.length ? (
         teams.map(team => {
             return (
-                <div className="container teamButtonContainer buttonwrapper" key={team.id}>
+                <div className="container teamButtonContainer buttonwrapper" key={team.key}>
                     {/* <span className="center teamNameButton" id="teamButtonText" onClick={() => {alert(team.id)}}>{team.name}</span> */}
-                    <Link to={"/teampage/"+team.id} className="center teamNameButton" id="teamButtonText">{team.name}</Link>
+                    <Link to={"/teampage/"+team.key} className="center teamNameButton" id="teamButtonText">{team.value.name}</Link>
                 </div>
             )
         })
