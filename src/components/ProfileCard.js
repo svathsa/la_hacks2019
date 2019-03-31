@@ -8,7 +8,7 @@ class ProfileCard extends Component {
 
     constructor(props){
 		super(props);
-		this.state={id: this.props.id, name: "", email: "", photoURL: ""};
+        this.state={id: this.props.id, name: "", email: "", photoURL: ""};
     }
     
     componentDidMount(){
@@ -25,6 +25,8 @@ class ProfileCard extends Component {
     }
 
     render() {
+        var refer=this;
+        var text='mailto:' + refer.state.email;
         return(
                 <div className="card profile-card" id="profile-card">
                     <div className="card-body row">
@@ -34,7 +36,11 @@ class ProfileCard extends Component {
                         <p className="card-text">{this.state.name}</p>
                     </div>
                     <div className="col-md-1">
-                        <i class="far fa-envelope"></i>
+                        <a href={text}>
+                        <i class="far fa-envelope" >
+                        
+                        </i>
+                        </a>
                     </div>
                     <div className="col-md-1">
                         <i class="fas fa-trash"></i>
