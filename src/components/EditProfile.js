@@ -254,40 +254,40 @@ class EditProfile extends Component {
                     </button> 
                 </div>
                 <div class="modal-body mx-3">
-                    <div class="md-form mb-5">
+                    <div class="md-form mb-3">
                     <i class="fas fa-user prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="form34">&nbsp;&nbsp;Title</label>
                     <input type="text" id="title" class="form-control validate" />
-                    <label data-error="wrong" data-success="right" for="form34">Title</label>
                     </div>
 
-                    <div class="md-form mb-5">
+                    <div class="md-form mb-3">
                     <i class="fas fa-envelope prefix grey-text"></i>
-                    <input type="text" id="role" class="form-control validate" />
-                    <label data-error="wrong" data-success="right" for="form29">Role</label>
+                    <label data-error="wrong" data-success="right" for="form29">&nbsp;&nbsp;Role</label>
+                    <input type="text" id="role" class="form-control validate" />   
                     </div>
 
-                    <div class="md-form mb-5">
+                    <div class="md-form mb-3">
                     <i class="fas fa-tag prefix grey-text"></i>
-                    <input type="text" id="description" class="form-control validate" />
-                    <label data-error="wrong" data-success="right" for="form32">Description</label>
+                    <label data-error="wrong" data-success="right" for="form32">&nbsp;&nbsp;Description</label>
+                    <input type="text" id="description" class="form-control validate" />  
                     </div>
 
-                    <div class="md-form mb-5">
+                    <div class="md-form mb-3">
                     <i class="fas fa-tag prefix grey-text"></i>
-                    <input type="text" id="location" class="form-control validate" />
-                    <label data-error="wrong" data-success="right" for="form32">Location</label>
+                    <label data-error="wrong" data-success="right" for="form32">&nbsp;&nbsp;Location</label>
+                    <input type="text" id="location" class="form-control validate" />    
                     </div>
 
-                    <div class="md-form mb-5">
+                    <div class="md-form  mb-3">
                     <i class="fas fa-tag prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="form32">&nbsp;&nbsp;Duration</label>
                     <input type="text" id="duration" class="form-control validate" />
-                    <label data-error="wrong" data-success="right" for="form32">Duration</label>
                     </div>
 
 
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
-                    <button class="btn btn-unique update-profile-submit " data-dismiss="modal"  onClick={this.submitExperience}>Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
+                    <button class="btn btn-unique update-profile-submit " data-dismiss="modal" onClick={this.submitExperience}>Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
                 </div>
                 </div>
             </div>
@@ -308,16 +308,16 @@ class EditProfile extends Component {
                     </button>
                 </div>
                 <div class="modal-body mx-3">
-                    <div class="md-form mb-5">
+                    <div class="md-form mb-2">
                     <i class="fas fa-user prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="form32">&nbsp;&nbsp;Skill</label>
                     <input type="text" id="skill" class="form-control validate" />
-                    <label data-error="wrong" data-success="right" for="form32">Skill</label>
                     </div>
 
 
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
-                    <button class="btn btn-unique" onClick={this.submitSkill}>Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
+                    <button class="btn btn-unique update-profile-submit" data-dismiss="modal" onClick={this.submitSkill}>Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
                 </div>
                 </div>
             </div>
@@ -338,16 +338,16 @@ class EditProfile extends Component {
                     </button>
                 </div>
                 <div class="modal-body mx-3">
-                    <div class="md-form mb-5">
-                    <i class="fas fa-user prefix grey-text"></i>
+                    <div class="md-form mb-2">
+                    <i class="fas fa-user prefix grey-text"></i> 
+                    <label data-error="wrong" data-success="right" for="form32">&nbsp;&nbsp;Link</label>
                     <input type="text" id="link" class="form-control validate" />
-                    <label data-error="wrong" data-success="right" for="form32">Link</label>
                     </div>
 
 
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
-                    <button class="btn btn-unique" onClick={this.submitLink}>Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
+                    <button class="btn btn-unique update-profile-submit" data-dismiss="modal" onClick={this.submitLink}>Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
                 </div>
                 </div>
             </div>
