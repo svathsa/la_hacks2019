@@ -28,7 +28,6 @@ class ProfileCard extends Component {
         return(
                 <div className="card profile-card" id="profile-card">
                     <div className="card-body row">
-                        <div className="col-md-1 justify-content-start align-items-center">
                             <img className="profile-card-image" src={this.state.photoURL} alt="Card image cap" />
                         </div>
                         <div className="col-md-8">

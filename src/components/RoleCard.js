@@ -37,9 +37,15 @@ class RoleCard extends Component {
   render () {
     return (
     	<div className="card">
-            {mapObject(this.state.role, function (key, value) {
-                                return <ProfileCard key={key} id={value} />;
-                            })}
+            <div className="roleName">
+                <h4> {this.props.role}</h4>
+            </div>
+            <div className= "profileCardContainer">
+                {mapObject(this.state.role, function (key, value) {
+                                    return <ProfileCard key={key} id={value} />;
+                                })}
+            </div>
+            <button onClick = {this.props.parentFunction}> Add Member </button>
 		</div>
 	);
   }
