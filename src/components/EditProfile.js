@@ -30,7 +30,6 @@ class EditProfile extends Component {
         this.handleChangeRole = this.handleChangeRole.bind(this);
         this.handleChangeCity = this.handleChangeCity.bind(this);
         this.handleChangeZip = this.handleChangeZip.bind(this);
-        this.handleChangeRating = this.handleChangeRating.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.submitExperience = this.submitExperience.bind(this);
         this.submitSkill = this.submitSkill.bind(this);
@@ -90,14 +89,6 @@ class EditProfile extends Component {
             profile: {
               ...this.state.profile,
               zip: event.target.value
-            }
-        });
-    }
-    handleChangeRating(event) {
-        this.setState({
-            profile: {
-              ...this.state.profile,
-              rating: event.target.value
             }
         });
     }
@@ -215,42 +206,42 @@ class EditProfile extends Component {
     render() {
             const post = this.state.profile ? (
             <div className="CompletePage">
+            <div class="head">
+                <h>Edit Profile</h>
+            </div>
             <form onSubmit={this.handleSubmit}>
                 <label>
-                    Name:
-                    <input type="text" value={this.state.profile.name} onChange={this.handleChangeName} />
+                    <input type="text" value={this.state.profile.name} onChange={this.handleChangeName} placeholder="Name.."/>
                 </label>
+                <br />
                 <label>
-                    Email:
-                    <input type="text" value={this.state.profile.email} onChange={this.handleChangeEmail} />
+                    <input type="text" value={this.state.profile.email} onChange={this.handleChangeEmail} placeholder="Email.."/>
                 </label>
+                <br />
+                <label> 
+                    <input type="text" value={this.state.profile.age} onChange={this.handleChangeAge} placeholder="Age.."/>
+                </label>
+                <br />
                 <label>
-                    Age:
-                    <input type="text" value={this.state.profile.age} onChange={this.handleChangeAge} />
+                    <input type="text" value={this.state.profile.education} onChange={this.handleChangeEducation} placeholder="Education.."/>
                 </label>
+                <br />
                 <label>
-                    Education:
-                    <input type="text" value={this.state.profile.education} onChange={this.handleChangeEducation} />
+                    <input type="text" value={this.state.profile.role} onChange={this.handleChangeRole} placeholder="Role.."/>
                 </label>
+                <br />
                 <label>
-                    Role:
-                    <input type="text" value={this.state.profile.role} onChange={this.handleChangeRole} />
+                    <input type="text" value={this.state.profile.city} onChange={this.handleChangeCity} placeholder="City.."/>
                 </label>
+                <br />
                 <label>
-                    City:
-                    <input type="text" value={this.state.profile.city} onChange={this.handleChangeCity} />
+                    <input type="text" value={this.state.profile.zip} onChange={this.handleChangeZip} placeholder="Zip Code.."/>
                 </label>
-                <label>
-                    Zip:
-                    <input type="text" value={this.state.profile.zip} onChange={this.handleChangeZip} />
-                </label>
-                <label>
-                    Rating:
-                    <input type="text" value={this.state.profile.rating} onChange={this.handleChangeRating} />
-                </label>
-                <input type="submit" value="Submit" />
+                <br />
+                <div class="submitButton">
+                    <input type="submit" value="Update Profile" />
+                </div>
             </form>
-
             <div class="modal fade" id="addExperienceForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -364,7 +355,9 @@ class EditProfile extends Component {
             <div class="text-center">
             <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#addLinkForm">Add Link</a>
             </div>
+
             </div>
+            
             ):(
                 <div className="center">Loading ...</div>
             )
@@ -377,3 +370,4 @@ class EditProfile extends Component {
 }
 
 export default EditProfile
+
