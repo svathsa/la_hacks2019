@@ -211,19 +211,19 @@ class EditProfile extends Component {
             </div>
             <form onSubmit={this.handleSubmit}>
                 <label>
-                    <input type="text" value={this.state.profile.name} onChange={this.handleChangeName} placeholder="Name.."/>
+                    <input type="text" class = "random-placeholder" value={this.state.profile.name} onChange={this.handleChangeName} placeholder="Name.."/>
                 </label>
                 <br />
                 <label>
-                    <input type="text" value={this.state.profile.email} onChange={this.handleChangeEmail} placeholder="Email.."/>
+                    <input type="text" class = "random-placeholder" value={this.state.profile.email} onChange={this.handleChangeEmail} placeholder="Email.."/>
                 </label>
                 <br />
                 <label> 
-                    <input type="text" value={this.state.profile.age} onChange={this.handleChangeAge} placeholder="Age.."/>
+                    <input type="text" class = "random-placeholder" value={this.state.profile.age} onChange={this.handleChangeAge} placeholder="Age.."/>
                 </label>
                 <br />
                 <label>
-                    <input type="text" value={this.state.profile.education} onChange={this.handleChangeEducation} placeholder="Education.."/>
+                    <input type="text" class = "random-placeholder" value={this.state.profile.education} onChange={this.handleChangeEducation} placeholder="Education.."/>
                 </label>
                 <br />
                 {/* <label>
@@ -231,7 +231,7 @@ class EditProfile extends Component {
                 </label>
                 <br /> */}
                 <label onChange={this.handleChangeRole} >
-                    <select name="role" class="input-type-text">
+                    <select name="role" id = "role-special-width" class="input-type-text">
                         {
                             console.log(this.state.profile.role)
                         }
@@ -302,11 +302,11 @@ class EditProfile extends Component {
                 </label>
                 <br />
                 <label>
-                    <input type="text" value={this.state.profile.city} onChange={this.handleChangeCity} placeholder="City.."/>
+                    <input type="text" class = "random-placeholder" value={this.state.profile.city} onChange={this.handleChangeCity} placeholder="City.."/>
                 </label>
                 <br />
                 <label>
-                    <input type="text" value={this.state.profile.zip} onChange={this.handleChangeZip} placeholder="Zip Code.."/>
+                    <input type="text" class = "random-placeholder" value={this.state.profile.zip} onChange={this.handleChangeZip} placeholder="Zip Code.."/>
                 </label>
                 <br />
 
