@@ -10,6 +10,7 @@ import BigProfilePage from './components/BigProfilePage'
 import RoleCard from './components/RoleCard'
 import BigEditProfile from './components/BigEditProfile'
 import BigLeadPage from './components/BigLeadPage'
+import RoleSuggestions from './components/RoleSuggestions'
 // Will be used to implement Redux
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Navbar from './components/Navbar';
@@ -27,6 +28,7 @@ class App extends Component {
           <Route exact path='/profile/:profile_id' component={BigProfilePage} ></Route>
           <Route exact path='/leadPage/:team_id' component={BigLeadPage}></Route>
           <Route exact path='/rolecard' component={RoleCard}></Route>
+          <Route exact path='/rolesuggestions' component={RoleSuggestions}></Route>
           <Route exact path='/editprofile/:profile_id' component={BigEditProfile} ></Route>
           </Switch>
         </div>

@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import './LeadPage.css';
 import firebase from 'firebase';
 import RoleCard from './RoleCard';
+import RoleSuggestions from './RoleSuggestions';
 
 function mapObject(object, callback) {
     if(object != null){
@@ -15,9 +16,41 @@ function mapObject(object, callback) {
   }
 
 class LeadPage extends Component {
-    state = {
-        team: null,
-        teamID: ''
+    
+
+    constructor(props){
+        super(props);
+        this.state = {
+            team: null,
+            teamID: '',
+            addRole: false
+        }
+
+        this.handleAddRole=this.handleAddRole.bind(this);
+    }
+    AddRoleToDatabase(roleName) {        
+        firebase.database().ref('Teams/' + this.state.teamID + '/roles').set({
+                    rolename: ""
+                },
+                (error) => {
+                    if (error) {
+                      console.log("Error!");
+                    } else {
+                        console.log("created role successfully!")
+                    }
+                  });
+        this.handleRemoveRole();
+        window.location.reload();
+    }
+    handleAddRole(event) {
+        this.setState({
+            addRole: true
+        });
+    }
+    handleRemoveRole(){
+        this.setState({
+            addRole: false
+        })
     }
     componentDidMount(){
         var teams = firebase.database().ref('Teams/' + this.props.teamid);
@@ -34,21 +67,28 @@ class LeadPage extends Component {
     }
     render() {
         var refer= this;
+    const componentToBeRendered = this.state.addRole ? (
+        <RoleSuggestions teamid = {this.state.teamID}  />
+    ) : (
+        <div></div>
+    )
     const leadpage = this.state.team ? (
+    
             <div className="outermost-container">
                 <div className="lead-page-container">
                 <div className="side-panel-container">
                     <div className="side-panel">
                      {mapObject(refer.state.team.roles, function (key, value) {
                          console.log(key)
-                                return <RoleCard  teamName = {refer.state.teamID} role = {key}/>;
+                                return <div className="role-card-container"><RoleCard  teamName = {refer.state.teamID} role = {key}/></div>;
                             })}
                         
                     </div>
-                    <button className="add-role-button">Add Card</button>
+                    <button className="add-role-button" onClick={this.handleAddRole}>Add Card</button>
 
                     </div>
                     <div className="main-panel">
+                            {componentToBeRendered}
                     </div>
                 </div>
             </div>
@@ -61,7 +101,7 @@ class LeadPage extends Component {
         </div>
     )
     return (
-        <div>
+        <div className = "some-container">
             {leadpage}
         </div>
     )
