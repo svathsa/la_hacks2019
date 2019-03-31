@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './TeamMember.css'
 import PropTypes from 'prop-types';
 import firebase from 'firebase';
@@ -28,11 +29,12 @@ class TeamMember extends Component {
         return(
             <div class="teamcard">
                 <img class="card__image teamimage" src={this.state.photoURL} alt=""/>
+                <Link to={"/profile/"+this.state.id}>
                 <div class="card__content">
                     <div class="card__title">{this.state.name}</div>
                     <p class="card__text">{this.state.role}</p>
-                    <button class="btn btn--block card__btn">view</button>
                 </div>
+            </Link>
             </div>
         )
     }
