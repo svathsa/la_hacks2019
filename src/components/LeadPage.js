@@ -25,7 +25,9 @@ class LeadPage extends Component {
         this.state = {
             team: null,
             teamID: '',
-            addRole: false
+            addRole: false,
+            addMember: false,
+            memberRole: ''
         }
 
         this.handleAddRole=this.handleAddRole.bind(this);
@@ -55,6 +57,12 @@ class LeadPage extends Component {
             addRole: false
         })
     }
+    handleAddMember = (roleName)=> {
+        this.setState({
+            addMember: true,
+            memberRole: roleName
+        })
+    }
     componentDidMount(){
         var teams = firebase.database().ref('Teams/' + this.props.teamid);
         teams.once('value', function(snapshot) {
@@ -76,7 +84,11 @@ class LeadPage extends Component {
         <RoleSuggestions teamid = {this.state.teamID}  />
         </div>
     ) : (
-        <div></div>
+        refer.state.addMember ? (
+            <SuggestionPane role={refer.state.memberRole} teamID={this.state.teamID}/>
+        ) : (
+            <div></div>
+        )
     )
     const leadpage = this.state.team ? (
     
@@ -86,7 +98,7 @@ class LeadPage extends Component {
                     <div className="side-panel">
                      {mapObject(refer.state.team.roles, function (key, value) {
                          console.log(key)
-                                return <div className="role-card-container"><RoleCard  teamName = {refer.state.teamID} role = {key}/></div>;
+                                return <div className="role-card-container"><RoleCard  teamName = {refer.state.teamID} role = {key} parentCallback={refer.handleAddMember}/></div>;
                             })}
                         
                     </div>
@@ -96,7 +108,6 @@ class LeadPage extends Component {
                     <div className="main-panel">
                     
                             {componentToBeRendered}
-    {/*<SuggestionPane role="role1" teamID={this.state.teamID}/>*/}
                     </div>
                 </div>
             </div>

@@ -21,7 +21,8 @@ class RoleCard extends Component {
     
     constructor(props){
 		super(props);
-		this.state={role: null};
+    this.state={role: null};
+    this.handleAdd=this.handleAdd.bind(this);
     }
     
     componentDidMount(){
@@ -34,19 +35,25 @@ class RoleCard extends Component {
            })
         });
     }
-	
+  
+    handleAdd()
+    {
+        this.props.parentCallback(this.props.role);
+    }
+
   render () {
+    var refer= this;
     return (
     	<div className="card">
             <div className="roleName">
-                <h4> {this.props.role}</h4>
+                <h4> {refer.props.role}</h4>
             </div>
             <div className= "profileCardContainer">
-                {mapObject(this.state.role, function (key, value) {
-                                    return <ProfileCard key={key} id={value} />;
+                {mapObject(refer.state.role, function (key, value) {
+                                    return <ProfileCard key={key} id={value} role={refer.props.role} team={refer.props.teamName}/>;
                                 })}
             </div>
-            <button onClick = {this.props.parentFunction}> Add Member </button>
+            <button onClick = {refer.handleAdd}> Add Member </button>
 		</div>
 	);
   }

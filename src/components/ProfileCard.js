@@ -4,11 +4,24 @@ import PropTypes from 'prop-types';
 import firebase from 'firebase';
 import base, {firebaseApp} from '../components/Firebase/firebase'
 
+
+
+function mapObject(object, callback) {
+    if(object != null){
+    return Object.keys(object).map(function (key) {
+      return callback(key, object[key]);
+    });
+    }else{
+        
+    }
+  }
+  
 class ProfileCard extends Component {
 
     constructor(props){
 		super(props);
-		this.state={id: this.props.id, name: "", email: "", photoURL: ""};
+        this.state={id: this.props.id, name: "", email: "", photoURL: ""};
+        this.removeFromTeam= this.removeFromTeam.bind(this);
     }
     
     componentDidMount(){
@@ -24,7 +37,31 @@ class ProfileCard extends Component {
         });
     }
 
+    removeFromTeam(){
+        var refer=this;
+        firebase.database().ref('Teams/'+refer.props.team+'/roles/'+refer.props.role).once('value').then(async (snapshot)=>{
+            console.log(snapshot.val());
+            let result= await snapshot.val();
+            var found = false;
+            var goldenkey;
+            mapObject(result, function (key, value) {
+                if(value==refer.state.id)
+                    found=true;
+                    goldenkey=key;
+                })
+            if(found==true)
+            {
+                var updates ={};
+                updates['Teams/'+refer.props.team+'/roles/'+refer.props.role+'/'+goldenkey]=null;
+                firebase.database().ref().update(updates);
+                window.location.reload();
+            }
+        });
+    }
+
     render() {
+        var refer=this;
+        var text='mailto:' + refer.state.email;
         return(
                 <div className="card profile-card" id="profile-card">
                     <div className="card-body row">
@@ -34,10 +71,14 @@ class ProfileCard extends Component {
                         <p className="card-text">{this.state.name}</p>
                     </div>
                     <div className="col-md-1">
-                        <i class="far fa-envelope"></i>
+                        <a href={text}>
+                        <i class="far fa-envelope" >
+                        
+                        </i>
+                        </a>
                     </div>
                     <div className="col-md-1">
-                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-trash" onClick={refer.removeFromTeam}></i>
                     </div>
                 </div>
         )
