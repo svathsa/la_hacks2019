@@ -14,14 +14,17 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { userInfo } from 'os';
+import SingleTeamButton from './SingleTeamButton'
+import firebase from 'firebase';
+import base, {firebaseApp} from '../components/Firebase/firebase'
 
 const TeamButtons = ({teams}) => {
     const teamList = teams.length ? (
         teams.map(team => {
             return (
                 <div className="container teamButtonContainer buttonwrapper" key={team.key}>
-                    {/* <span className="center teamNameButton" id="teamButtonText" onClick={() => {alert(team.id)}}>{team.name}</span> */}
-                    <Link to={"/teampage/"+team.key} className="center teamNameButton" id="teamButtonText">{team.value.name}</Link>
+                    < SingleTeamButton team={team}/>
                 </div>
             )
         })

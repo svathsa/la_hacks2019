@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LeadPage from './LeadPage';
-import './BigProfilePage.css';
+import './BigLeadPage.css';
 import Navbar from './Navbar';
 
 class BigLeadPage extends Component {

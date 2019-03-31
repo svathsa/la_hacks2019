@@ -28,6 +28,7 @@ class RoleCard extends Component {
         firebase.database().ref('Teams/'+this.props.teamName+'/roles/'+this.props.role).once('value').then(async(snapshot)=> {
             console.log(snapshot.val());
             let roleResult= await snapshot.val();
+            console.log(roleResult);
            this.setState({
                role: roleResult
            })
