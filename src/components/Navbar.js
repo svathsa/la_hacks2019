@@ -68,7 +68,7 @@ class Navbar extends Component {
     className="dropdown-item">
     View profile
     </a>
-
+    {/* Component wont render if I use a Link to tag  */}
     <a
     className="dropdown-item"
     href="#">Edit profile</a>
