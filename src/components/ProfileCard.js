@@ -4,6 +4,18 @@ import PropTypes from 'prop-types';
 import firebase from 'firebase';
 import base, {firebaseApp} from '../components/Firebase/firebase'
 
+
+
+function mapObject(object, callback) {
+    if(object != null){
+    return Object.keys(object).map(function (key) {
+      return callback(key, object[key]);
+    });
+    }else{
+        
+    }
+  }
+  
 class ProfileCard extends Component {
 
     constructor(props){

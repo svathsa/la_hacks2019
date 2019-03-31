@@ -50,7 +50,7 @@ class RoleCard extends Component {
             </div>
             <div className= "profileCardContainer">
                 {mapObject(refer.state.role, function (key, value) {
-                                    return <ProfileCard key={key} id={value} />;
+                                    return <ProfileCard key={key} id={value} role={refer.props.role} team={refer.props.teamName}/>;
                                 })}
             </div>
             <button onClick = {refer.handleAdd}> Add Member </button>
