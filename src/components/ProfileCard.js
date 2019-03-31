@@ -29,16 +29,15 @@ class ProfileCard extends Component {
                 <div className="card profile-card" id="profile-card">
                     <div className="card-body row">
                             <img className="profile-card-image" src={this.state.photoURL} alt="Card image cap" />
-                        </div>
-                        <div className="col-md-8">
-                            <p className="card-text">{this.state.name}</p>
-                        </div>
-                        <div className="col-md-1">
-                            <i class="far fa-envelope"></i>
-                        </div>
-                        <div className="col-md-1">
-                            <i class="fas fa-trash"></i>
-                        </div>
+                    </div>
+                    <div className="col-md-8">
+                        <p className="card-text">{this.state.name}</p>
+                    </div>
+                    <div className="col-md-1">
+                        <i class="far fa-envelope"></i>
+                    </div>
+                    <div className="col-md-1">
+                        <i class="fas fa-trash"></i>
                     </div>
                 </div>
         )

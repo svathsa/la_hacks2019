@@ -10,6 +10,7 @@ class Navbar extends Component {
     }
     componentDidMount() {
         firebase.auth().onAuthStateChanged((user) => {
+            if(user!=null)
             this.setState({
                 userid: user.uid
             });
