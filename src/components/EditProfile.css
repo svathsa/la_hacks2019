@@ -15,8 +15,11 @@ input[type=text],
     /* width: 100%; */
     padding: 7px 18px; 
     margin: 6px 0;
+    background-color: white;
     /* box-sizing: border-box; */
     border-radius: 8px;
+    width : 200px;
+    height: 54px;
   }
   
 .update-profile-submit {
