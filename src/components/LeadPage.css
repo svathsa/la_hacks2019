@@ -31,3 +31,33 @@
 .add-role-button{
     width: 100%;
 }
+
+.main-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+button{
+    background-color: aliceblue;
+    background-repeat:no-repeat;
+    border: none;
+    width: 100%;
+}
+
+.row-outer-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.closeButtonContainer{
+    background-color: aliceblue;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.outer-container{
+    margin-left: 5%;
+    margin-right: 5%;
+}
