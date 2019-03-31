@@ -211,31 +211,102 @@ class EditProfile extends Component {
             </div>
             <form onSubmit={this.handleSubmit}>
                 <label>
-                    <input type="text" value={this.state.profile.name} onChange={this.handleChangeName} placeholder="Name.."/>
+                    <input type="text" class = "random-placeholder" value={this.state.profile.name} onChange={this.handleChangeName} placeholder="Name.."/>
                 </label>
                 <br />
                 <label>
-                    <input type="text" value={this.state.profile.email} onChange={this.handleChangeEmail} placeholder="Email.."/>
+                    <input type="text" class = "random-placeholder" value={this.state.profile.email} onChange={this.handleChangeEmail} placeholder="Email.."/>
                 </label>
                 <br />
                 <label> 
-                    <input type="text" value={this.state.profile.age} onChange={this.handleChangeAge} placeholder="Age.."/>
+                    <input type="text" class = "random-placeholder" value={this.state.profile.age} onChange={this.handleChangeAge} placeholder="Age.."/>
                 </label>
                 <br />
                 <label>
-                    <input type="text" value={this.state.profile.education} onChange={this.handleChangeEducation} placeholder="Education.."/>
+                    <input type="text" class = "random-placeholder" value={this.state.profile.education} onChange={this.handleChangeEducation} placeholder="Education.."/>
                 </label>
                 <br />
-                <label>
+                {/* <label>
                     <input type="text" value={this.state.profile.role} onChange={this.handleChangeRole} placeholder="Role.."/>
                 </label>
-                <br />
-                <label>
-                    <input type="text" value={this.state.profile.city} onChange={this.handleChangeCity} placeholder="City.."/>
+                <br /> */}
+                <label onChange={this.handleChangeRole} >
+                    <select name="role" id = "role-special-width" class="input-type-text">
+                        {
+                            console.log(this.state.profile.role)
+                        }
+                        {
+                            (this.state.profile.role === "Producer") ? (
+                                <option value="Producer" selected >Producer</option>
+                            ) : (
+                                <option value="Producer">Producer</option>
+                            )
+                        }
+                        {
+                            (this.state.profile.role === "Director") ? (
+                                <option value="Director" selected >Director</option>
+                            ) : (
+                                <option value="Director">Director</option>
+                            )
+                        }
+                        {
+                            (this.state.profile.role === "Actor") ? (
+                                <option value="Actor" selected >Actor</option>
+                            ) : (
+                                <option value="Actor">Actor</option>
+                            )
+                        }
+                        {
+                            (this.state.profile.role === "Writer") ? (
+                                <option value="Writer" selected >Writer</option>
+                            ) : (
+                                <option value="Writer">Writer</option>
+                            )
+                        }
+                        {
+                            (this.state.profile.role === "Editor") ? (
+                                <option value="Editor" selected >Editor</option>
+                            ) : (
+                                <option value="Editor">Editor</option>
+                            )
+                        }
+                        {
+                            (this.state.profile.role === "Cinematographer") ? (
+                                <option value="Cinematographer" selected >Cinematographer</option>
+                            ) : (
+                                <option value="Cinematographer">Cinematographer</option>
+                            )
+                        }
+                        {
+                            (this.state.profile.role === "Stuntman") ? (
+                                <option value="Stuntman" selected >Stuntman</option>
+                            ) : (
+                                <option value="Stuntman">Stuntman</option>
+                            )
+                        }
+                        {
+                            (this.state.profile.role === "Make-up Artist") ? (
+                                <option value="Make-up Artist" selected >Make-up Artist</option>
+                            ) : (
+                                <option value="Make-up Artist">Make-up Artist</option>
+                            )
+                        }
+                        {
+                            (this.state.profile.role === "Music Director") ? (
+                                <option value="Music Director" selected >Music Director</option>
+                            ) : (
+                                <option value="Music Director">Music Director</option>
+                            )
+                        }
+                    </select>
                 </label>
                 <br />
                 <label>
-                    <input type="text" value={this.state.profile.zip} onChange={this.handleChangeZip} placeholder="Zip Code.."/>
+                    <input type="text" class = "random-placeholder" value={this.state.profile.city} onChange={this.handleChangeCity} placeholder="City.."/>
+                </label>
+                <br />
+                <label>
+                    <input type="text" class = "random-placeholder" value={this.state.profile.zip} onChange={this.handleChangeZip} placeholder="Zip Code.."/>
                 </label>
                 <br />
 

@@ -1,4 +1,14 @@
 .profileCardContainer{
-    height: 400px; /* or any value */
+    height: 300px;
     overflow-y: auto;
+}
+
+button.special-temp-button {
+    background-color: aliceblue;
+    background-repeat:no-repeat;
+    cursor:pointer;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    outline:none;
 }

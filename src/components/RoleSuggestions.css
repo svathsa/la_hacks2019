@@ -1,0 +1,11 @@
+button{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+}
+button:hover{
+    background-color: aliceblue;
+}
+.list-group-item:hover{
+    background-color: aliceblue;
+}
