@@ -44,6 +44,7 @@ class Navbar extends Component {
                     aria-label="Toggle navigation">
                         <i className="fas fa-bars fa-lg"></i>
                     </button>
+                    <div className = "extra-box-fill"></div>
                     <div
                     id="navbarNavDropdown"
                     className="navbar-collapse collapse">
