@@ -12,14 +12,16 @@
 
 // export default TeamButton
 
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const TeamButtons = ({teams}) => {
     const teamList = teams.length ? (
         teams.map(team => {
             return (
                 <div className="container teamButtonContainer buttonwrapper" key={team.id}>
-                    <span className="center teamNameButton" id="teamButtonText" onClick={() => {alert(team.id)}}>{team.name}</span>
+                    {/* <span className="center teamNameButton" id="teamButtonText" onClick={() => {alert(team.id)}}>{team.name}</span> */}
+                    <Link to={"/team/"+team.id} className="center teamNameButton" id="teamButtonText">{team.name}</Link>
                 </div>
             )
         })

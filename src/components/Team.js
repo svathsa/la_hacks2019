@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import Navbar from './Navbar'
 
 class Team extends Component {
     render() {
         return(
-            <div class="container home">
+            <div class="team">
+                < Navbar />
                 <h4 className="center">TEAM</h4>
             </div>
         )
