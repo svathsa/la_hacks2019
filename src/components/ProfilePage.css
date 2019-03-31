@@ -162,15 +162,17 @@ h2{
 #specialText02{
     font-family: 'Cairo', sans-serif;
     font-weight: lighter;
+}#specialText01{
+    font-family: 'Cairo', sans-serif;
+    font-weight: bolder;
+    font-size: x-large;
 }
 #specialDescription{
-    border: 1px double white;
     padding: 5px;
-    border-radius: 5px;
     padding-right: 5px;
     width: 100vh;
     text-align: left;
     margin-top: 5px;
-    font-size: small;
-    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    font-family: 'Cairo', sans-serif;
 }
