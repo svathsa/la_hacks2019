@@ -27,10 +27,12 @@ class TeamPage extends Component {
         }
 
         this.fetchData =this.fetchData.bind(this);
+        this.fetchOtherData=this.fetchOtherData.bind(this);
     }
 
     componentDidMount(){
         this.fetchData();
+        this.fetchOtherData();
     }
 
     fetchData(){
@@ -62,7 +64,14 @@ class TeamPage extends Component {
             }
           })
 
-          firebase.auth().onAuthStateChanged(function(user) {
+    
+    }
+
+    fetchOtherData(){
+        var refer=this;
+        let id = this.props.match.params.team_id;
+
+        firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 console.log("Reached!");
                 firebase.database().ref('Teams/'+ id + '/name').once('value').then(async(snapshot)=> {
@@ -74,6 +83,16 @@ class TeamPage extends Component {
                     console.log("State");
                     console.log(refer.state);
                 });
+                firebase.database().ref('Teams/'+ id + '/lead').once('value').then(async(snapshot)=> {
+                    let tempLead= await snapshot.val();
+                    refer.setState({
+                        ids: refer.state.ids,
+                        name: refer.state.name,
+                        leadID: tempLead
+                    });
+                    console.log("State");
+                    console.log(refer.state);
+                });
             } else {
               // No user is signed in.
             }
@@ -81,6 +100,7 @@ class TeamPage extends Component {
     }
 
     render() {
+        var refer=this;
         let id = this.props.match.params.team_id;
         console.log(id);
         return(
@@ -92,7 +112,7 @@ class TeamPage extends Component {
             <div class = "status"><i class="fas fa-check"></i></div>
 
             <ul class="cards">
-                
+            {/* <li class="cards__item" key={0}> <TeamMember id={refer.state.leadID}/> </li>) */}
 
                 {console.log("State")}
                 {console.log(this.state)}
