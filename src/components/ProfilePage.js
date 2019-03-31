@@ -102,7 +102,7 @@ class ProfilePage extends Component {
                         <div className ="card" id="profile-skill">
                         <div className="card-row"><h3>Skills</h3></div>
                         <div className="work-experience">{mapObject(this.state.profile.skills, function (key, value) {
-                                return <div className="card-row" key={key} >{value}</div>;
+                                return <div className="card-row" key={key} >{value.name}</div>;
                             })}</div>
                         </div> 
                         </div>
