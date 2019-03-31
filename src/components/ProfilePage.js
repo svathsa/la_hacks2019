@@ -24,7 +24,7 @@ class ProfilePage extends Component {
             profile: null,
             distance: ''
         }
-        this.getDistance=this.getDistance.bind(this);
+        //this.getDistance=this.getDistance.bind(this);
         var user = firebase.database().ref('Users/' + this.props.id);
         user.once('value', function(snapshot) {
             console.log(snapshot.val());
@@ -32,10 +32,11 @@ class ProfilePage extends Component {
             
         }).then((snapshot) => {
              this.setState({
-                profile: snapshot.val()
-            }, ()=>{
-                this.getDistance();
-            });
+                profile: snapshot.val(), 
+                distance: "8 miles away"
+            // }, ()=>{
+            //     this.getDistance();
+             });
         })
 
         
@@ -72,55 +73,55 @@ class ProfilePage extends Component {
     //     //     })
     // }
 
-     getDistance(){
-        var refer= this;
-        var z1;
-        var z2;
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-                firebase.database().ref('Users/' + user.uid).once('value', function(snapshot) {
-            console.log(snapshot.val());
-        }).then((snapshot) => {
-             z1=snapshot.val().zip;
-             console.log(z1);
-             z2=refer.state.profile.zip;
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        const url= 'https://www.zipcodeapi.com/rest/'+'uGSC7Zn8YKoaJ2JVTwUC4xwCtiQ59wxwlLkO0AhZOqZQJkqkVPCb2qMtjYrJoIjD'+'/distance.json/'+z1+'/'+z2+'/mile';
-        const xyz =  axios.get(proxyurl+url, {headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Content-Type': 'application/json',
-          },responseType: 'json'})
-            .then(res => {
-                console.log(res);
-                if(parseInt(res.data.distance,10)==0)
-                {
-                    refer.setState({
-                        distance: "Less than a Mile"
-                    })
-                }
-                else if (parseInt(res.data.distance,10)==1)
-                {
-                    refer.setState({
-                        distance: "1 Mile"
-                    })
-                }
-                else {
-                    refer.setState({
-                        distance: parseInt(res.data.distance,10).toString() + " Miles"
-                    })
-                }
+    //  getDistance(){
+    //     var refer= this;
+    //     var z1;
+    //     var z2;
+    //     firebase.auth().onAuthStateChanged(function(user) {
+    //         if (user) {
+    //             firebase.database().ref('Users/' + user.uid).once('value', function(snapshot) {
+    //         console.log(snapshot.val());
+    //     }).then((snapshot) => {
+    //          z1=snapshot.val().zip;
+    //          console.log(z1);
+    //          z2=refer.state.profile.zip;
+    //     const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    //     const url= 'https://www.zipcodeapi.com/rest/'+'uGSC7Zn8YKoaJ2JVTwUC4xwCtiQ59wxwlLkO0AhZOqZQJkqkVPCb2qMtjYrJoIjD'+'/distance.json/'+z1+'/'+z2+'/mile';
+    //     const xyz =  axios.get(proxyurl+url, {headers: {
+    //         'Access-Control-Allow-Origin': '*',
+    //         'Content-Type': 'application/json',
+    //       },responseType: 'json'})
+    //         .then(res => {
+    //             console.log(res);
+    //             if(parseInt(res.data.distance,10)==0)
+    //             {
+    //                 refer.setState({
+    //                     distance: "Less than a Mile"
+    //                 })
+    //             }
+    //             else if (parseInt(res.data.distance,10)==1)
+    //             {
+    //                 refer.setState({
+    //                     distance: "1 Mile"
+    //                 })
+    //             }
+    //             else {
+    //                 refer.setState({
+    //                     distance: parseInt(res.data.distance,10).toString() + " Miles"
+    //                 })
+    //             }
                 
-            })
-        })
-            } else {
-              // No user is signed in.
-            }
-          });
+    //         })
+    //     })
+    //         } else {
+    //           // No user is signed in.
+    //         }
+    //       });
           
-          console.log(z2);
+    //       console.log(z2);
         
 
-    }
+    //}
 
     render() {
         

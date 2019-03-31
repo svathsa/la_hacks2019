@@ -4,7 +4,7 @@
 }
 
 .side-panel{
-    height: 760px; /* or any value */
+    height: 875px; /* or any value */
     overflow-y: auto;
     display: flex;
     flex-direction: column;
