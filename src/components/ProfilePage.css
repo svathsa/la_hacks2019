@@ -17,7 +17,7 @@
 }
 .profile-workexp-title{
     margin-top: 10vh;
-    background: linear-gradient(to bottom,  rgba(96, 150, 186, 1), rgba(7,49,84,1) 0% 100%);   
+    background:rgb(12, 77, 129);  
 }
 #photo-name-role{
     display: flex;
@@ -47,17 +47,16 @@ h2{
     color: white;
 }
 .card.workexp-special-card{
-    background: linear-gradient(to bottom,  rgba(96, 150, 186, 1), rgba(7,49,84,1) 0% 100%);   
+    background:rgb(12, 77, 129);  
 }
 .card.biography-card{
-    background: linear-gradient(to bottom,  rgba(96, 150, 186, 1), rgba(7,49,84,1) 0% 100%);   
-
+    background:rgb(12, 77, 129);  
 }
 .card.skills-card{
-    background: linear-gradient(to bottom,  rgba(96, 150, 186, 1), rgba(7,49,84,1) 0% 100%);   
+    background:rgb(12, 77, 129);  
 }
 .card.profile-head-card{
-    background: linear-gradient(to bottom, rgba(7,49,84,1) 0%, rgba(96, 150, 186, 1)  100%);
+    background:rgb(8, 42, 70);  
 }
 .profile-photo{
     width:15%;
@@ -68,10 +67,14 @@ h2{
 
 .name-profile{
     margin-left: 10%;
+    font-family: 'Cairo', sans-serif;
+
 }
 
 .distance-rating{
     display: flex;
+    font-family: 'Cairo', sans-serif;
+
     flex-direction: column;
     justify-content: space-around;
 }

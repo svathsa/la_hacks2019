@@ -79,7 +79,7 @@ class ProfilePage extends Component {
                     </div>
                     <div className="distance-rating">
                         <div className="row-distance-rating distanceNumber">
-                        5 Miles Away&nbsp;<i class="fas fa-map-marker-alt fa-lg"></i>
+                        Proximity: 5 miles&nbsp;<i class="fas fa-map-marker-alt fa-lg"></i>
                         </div>
                         <div className="row-distance-rating ratingNumber">
                         Rating: {this.state.profile.rating}&nbsp;<i class="fas fa-star"></i>
