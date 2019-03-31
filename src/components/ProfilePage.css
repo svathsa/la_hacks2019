@@ -28,7 +28,9 @@
     text-align: right;
     padding: 2px;
 }
-
+.specialText01{
+    opacity: 0.9;
+}
 h2{
     color: white;
 }
@@ -135,4 +137,8 @@ h2{
 }
 .ratingNumber{
     margin-bottom: auto;
+}
+#specialText02{
+    font-family: 'Cairo', sans-serif;
+    font-weight: lighter;
 }
