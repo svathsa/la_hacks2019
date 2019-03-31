@@ -1,9 +1,33 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
+import firebase from 'firebase';
+import base, {firebaseApp} from '../components/Firebase/firebase'
 import './Navbar.css'
 
 class Navbar extends Component {
+    state = {
+        userid: null
+    }
+    componentDidMount() {
+        firebase.auth().onAuthStateChanged((user) => {
+            if(user!=null)
+            this.setState({
+                userid: user.uid
+            });
+        })
+    }
+    logout(props) {
+        props.history.push('/');
+        firebase.auth().signOut().then(function() {
+            console.log("Signed Out");
+        })
+        .catch(function(error) {
+            console.log(error.message);
+        })
+    }
     render() {
+        console.log("Render");
+        console.log(this.props);
         return(
             <div className="navbar">
                 <nav className="navbar navbar-expand-lg">
@@ -27,16 +51,14 @@ class Navbar extends Component {
         <li className="nav-item">
             <a
             className="nav-link"
-            href="{{ url('/login') }}">
+            href="#">
                 <i className="fas fa-bell fa-lg"></i>
             </a>   
         </li>
         <li className="nav-item">
-            <a
-            className="nav-link"
-            href="{{ url('/register') }}">
+            <Link to="/home" className="nav-link">
                 <i className="fas fa-envelope fa-lg"></i>
-            </a>
+            </Link>
         </li>
 
     <li className="nav-item dropdown">
@@ -54,10 +76,11 @@ class Navbar extends Component {
     className="dropdown-menu dropdown-menu-right"
     aria-labelledby="navbarDropdownMenuLink">
 
-    <a
-    className="dropdown-item"
-    href="#">View profile</a>
-
+    <a href={"/profile/"+this.state.userid}
+    className="dropdown-item">
+    View profile
+    </a>
+    {/* Component wont render if I use a Link to tag  */}
     <a
     className="dropdown-item"
     href="#">Edit profile</a>
@@ -65,9 +88,13 @@ class Navbar extends Component {
     <div
     className="dropdown-divider"></div>
 
-    <a
+    <button onClick={
+        () => {
+            this.logout(this.props);
+        }
+          }
     className="dropdown-item"
-    href="#">Logout</a>
+    >Logout</button>
 
     </div>
 
@@ -83,4 +110,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar
+export default withRouter(Navbar)

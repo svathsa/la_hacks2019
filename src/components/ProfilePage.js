@@ -14,8 +14,6 @@ function mapObject(object, callback) {
     }
   }
 
-
-
 class ProfilePage extends Component {
     state = {
         profile: null
@@ -80,11 +78,11 @@ class ProfilePage extends Component {
                         </div>   
                     </div>
                     <div className="distance-rating">
-                        <div className="row-distance-rating">
-                            5 miles away
+                        <div className="row-distance-rating distanceNumber">
+                        5 Miles Away&nbsp;<i class="fas fa-map-marker-alt fa-lg"></i>
                         </div>
-                        <div className="row-distance-rating">
-                           Rating: {this.state.profile.rating}
+                        <div className="row-distance-rating ratingNumber">
+                        Rating: {this.state.profile.rating}&nbsp;<i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
@@ -93,16 +91,16 @@ class ProfilePage extends Component {
                         <div className="cardContainer">
                         <div className="card" id="profile-credentials">
                             <div className="card-row"><h3>Bio</h3></div>
-                            <div className="card-row">Age: {this.state.profile.age}</div>
-                            <div className="card-row">Location: {this.state.profile.city}</div>
-                            <div className="card-row">Education: {this.state.profile.education}</div>
+                            <div className="card-row"><i class="fas fa-clock">&nbsp;&nbsp;</i>Age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;{this.state.profile.age}</div>
+                            <div className="card-row"><i class="fas fa-map-marked-alt">&nbsp;&nbsp;</i>Location&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;{this.state.profile.city}</div>
+                            <div className="card-row"><i class="fas fa-book">&nbsp;&nbsp;&nbsp;</i>Education&nbsp;&nbsp;: &nbsp;{this.state.profile.education}</div>
                         </div>
                         </div>
                         <div className="cardContainer">
                         <div className ="card" id="profile-skill">
                         <div className="card-row"><h3>Skills</h3></div>
                         <div className="work-experience">{mapObject(this.state.profile.skills, function (key, value) {
-                                return <div className="card-row" key={key} >{value}</div>;
+                                return <div className="card-row" key={key} >{value.name}</div>;
                             })}</div>
                         </div> 
                         </div>
@@ -120,7 +118,7 @@ class ProfilePage extends Component {
                                 <div className="card-body">
                                     <div className="card-row"><h4 className="card-title">{value.title}</h4></div>
                                     <div className="card-row"><h5>Duration: {value.duration}</h5></div>
-                                    <div className="card-row"><h5>Location: {value.place}</h5></div>
+                                    <div className="card-row"><h5>Location: {value.location}</h5></div>
                                     <div className="card-row"><p className="card-text">{value.description}.</p></div>
                                 </div>
                                 </div>
@@ -134,7 +132,11 @@ class ProfilePage extends Component {
                 </div>
             </div>
         ) : (
-            <div className="center">Loading profile...</div>
+            <div className="center">
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            </div>
         )
         return (
             <div>
