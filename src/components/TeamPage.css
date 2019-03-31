@@ -1,0 +1,112 @@
+.teamheader {
+    padding: 13px;
+    text-align: center;
+    color: white;
+    font-size: 300px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    
+  }
+  .status {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px; 
+    background-color: rgb(55, 109, 96); 
+    border: none;
+    color: rgba(220, 225, 222, 1); 
+    padding: 7px 28px;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+    
+  }
+  .teamimage {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+  
+  }
+  .btn {
+    border: 1px solid #000000;
+    padding: 0.5rem;
+    color: rgb(255, 255, 255);
+    text-transform: lowercase;
+    font-weight: lighter;
+    font-family: 'Rale-way', sans-serif;
+  }
+  .btn:hover{
+    opacity: 0.2;
+  }
+  .btn--block {
+    display: block;
+    width: 100%;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+  }
+  .cards__item {
+    display: flex;
+    padding: 1rem;
+  }
+  
+  .teamcard {
+    background: linear-gradient(to bottom, rgba(7,49,84,1) 0%, rgba(129,178,227,1) 100%);
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .card:hover .card__image {
+    -webkit-filter: contrast(100%);
+            filter: contrast(100%);
+        
+  }
+  .card__content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    padding: 1em;
+  }
+  .card__image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    -webkit-filter: contrast(70%);
+            filter: contrast(70%);
+    overflow: hidden;
+    position: relative;
+    transition: -webkit-filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+    transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+    transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91), -webkit-filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+  }
+  .card__image::before {
+    content: "";
+    display: block;
+    padding-top: 200px;
+  }
+  .card__title {
+    color: white;
+    font-family: 'Playfair Display', serif;
+  
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  .card__text {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    flex: 1 1 auto;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+  }
+  

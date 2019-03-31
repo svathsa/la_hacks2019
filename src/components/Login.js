@@ -50,6 +50,9 @@ class Login extends Component {
         .auth()
         .signInWithPopup(authProvider)
         .then(this.authHandler)
+        .then(() => {
+             this.props.history.push('/home')
+             })
         .catch((error) => {
             // Handle Errors here.
             var errorCode = error.code;
