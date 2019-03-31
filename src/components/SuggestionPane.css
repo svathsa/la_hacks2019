@@ -1,0 +1,4 @@
+.profileCardContainer{
+    height: 400px; /* or any value */
+    overflow-y: auto;
+}
