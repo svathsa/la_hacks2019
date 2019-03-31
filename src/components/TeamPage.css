@@ -1,4 +1,4 @@
-.header {
+.teamheader {
     padding: 13px;
     text-align: center;
     color: white;
@@ -23,7 +23,7 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
     
   }
-  img {
+  .teamimage {
     height: auto;
     max-width: 100%;
     vertical-align: middle;
@@ -55,7 +55,7 @@
     padding: 1rem;
   }
   
-  .card {
+  .teamcard {
     background: linear-gradient(to bottom, rgba(7,49,84,1) 0%, rgba(129,178,227,1) 100%);
     border-radius: 0.25rem;
     box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);

@@ -10,7 +10,7 @@ class TeamPage extends Component {
             <div class="team">
                 < Navbar />
                 <h4 className="center">TEAM {id}</h4>
-                <div class = "header">
+                <div class = "teamheader">
                     <h1>team name</h1>  
                 </div>
             
@@ -21,8 +21,8 @@ class TeamPage extends Component {
 
                 <ul class="cards">
                 <li class="cards__item">
-                    <div class="card">
-                    <img class="card__image" src="https://static.thenounproject.com/png/17241-200.png" alt=""/>
+                    <div class="teamcard">
+                    <img class="card__image teamimage" src="https://img.icons8.com/color/1600/circled-user-male-skin-type-1-2.png" alt=""/>
                     <div class="card__content">
                         <div class="card__title">Insert Name</div>
                         <p class="card__text">Insert role</p>
