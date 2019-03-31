@@ -1,13 +1,48 @@
 import React, { Component } from 'react';
+import './RoleCard.css'
+import ProfileCard from './ProfileCard'
+import PropTypes from 'prop-types';
+import firebase from 'firebase';
+import base, {firebaseApp} from '../components/Firebase/firebase'
 
-class RoleCard extends Component {
-    render() {
-        return(
-            <div class="outermost-container">
-                <h4 className="center">CARD</h4>
-            </div>
-        )
+
+function mapObject(object, callback) {
+    if(object != null){
+    return Object.keys(object).map(function (key) {
+      return callback(key, object[key]);
+    });
+    }else{
+        
     }
+  }
+  
+class RoleCard extends Component {
+
+    
+    constructor(props){
+		super(props);
+		this.state={role: null};
+    }
+    
+    componentDidMount(){
+        firebase.database().ref('Teams/'+this.props.teamName+'/roles/'+this.props.role).once('value').then(async(snapshot)=> {
+            console.log(snapshot.val());
+            let roleResult= await snapshot.val();
+           this.setState({
+               role: roleResult
+           })
+        });
+    }
+	
+  render () {
+    return (
+    	<div className="card">
+            {mapObject(this.state.role, function (key, value) {
+                                return <ProfileCard key={key} id={value} />;
+                            })}
+		</div>
+	);
+  }
 }
 
 export default RoleCard
