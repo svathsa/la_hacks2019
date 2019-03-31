@@ -3,6 +3,7 @@ import Navbar from './Navbar'
 import TeamButtons from './TeamButton'
 import firebase from 'firebase'
 import AddTeam from './AddTeam'
+import { BrowserRouter } from 'react-router-dom'
 import './Home.css'
 
 function mapObject(object, callback) {
@@ -64,7 +65,7 @@ class Home extends Component {
     render() {
             return(
             <div className="home">
-                <Navbar />
+                <BrowserRouter><Navbar /></BrowserRouter>
                 <div className = "homepage">
                     <p id = "myteams">
                         My Teams
