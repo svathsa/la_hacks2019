@@ -238,19 +238,20 @@ class EditProfile extends Component {
                     <input type="text" value={this.state.profile.zip} onChange={this.handleChangeZip} placeholder="Zip Code.."/>
                 </label>
                 <br />
-                <div class="submitButton">
-                    <input type="submit" value="Update Profile" />
-                </div>
+
+              
+                 <input type="submit" value="Submit" />
+          
             </form>
             <div class="modal fade" id="addExperienceForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold">Add Experience</h4>
+                <div class="modal-header text-center">          
+                    <h4 class="modal-title">Add Experience</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
-                    </button>
+                    </button> 
                 </div>
                 <div class="modal-body mx-3">
                     <div class="md-form mb-5">
@@ -293,7 +294,7 @@ class EditProfile extends Component {
             </div>
 
             <div class="text-center">
-            <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#addExperienceForm">Add Experience</a>
+            <a href="" id="experienceButton" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#addExperienceForm">Add Experience</a>
             </div>
 
             <div class="modal fade" id="addSkillForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -301,7 +302,7 @@ class EditProfile extends Component {
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold">Add Skill</h4>
+                    <h4 class="modal-title">Add Skill</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
@@ -323,7 +324,7 @@ class EditProfile extends Component {
             </div>
 
             <div class="text-center">
-            <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#addSkillForm">Add Skill</a>
+            <a href="" id="experienceButton" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#addSkillForm">Add Skill</a>
             </div>
 
             <div class="modal fade" id="addLinkForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -331,7 +332,7 @@ class EditProfile extends Component {
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold">Add Link</h4>
+                    <h4 class="modal-title">Add Link</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
@@ -353,9 +354,8 @@ class EditProfile extends Component {
             </div>
 
             <div class="text-center">
-            <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#addLinkForm">Add Link</a>
+            <a href="" id="experienceButton" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#addLinkForm">Add Link</a>
             </div>
-
             </div>
             
             ):(
@@ -370,4 +370,3 @@ class EditProfile extends Component {
 }
 
 export default EditProfile
-
