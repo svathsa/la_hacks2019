@@ -118,10 +118,10 @@ class ProfilePage extends Component {
                     return <div className="profile-workexp-card" key={key}>
                                 <div className="card workexp-special-card">
                                 <div className="card-body">
-                                    <div className="card-row">project&nbsp;&nbsp;&nbsp;&mdash;&nbsp;<h5 id = "specialText02">{value.title}</h5></div>
-                                    <div className="card-row">duration&nbsp;&mdash;&nbsp;<h5 id = "specialText02">{value.duration}</h5></div>
-                                    <div className="card-row">location&nbsp;&nbsp;&mdash;&nbsp;<h5 id = "specialText02">{value.location}</h5></div>
-                                    <div className="card-row">role&nbsp;&nbsp;&mdash;&nbsp;<h5 id = "specialText02">{value.role}</h5></div>
+                                    <div className="card-row"><h5 id = "specialText01">{value.title}</h5></div>
+                                    <div className="card-row">duration&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&mdash;&nbsp;&nbsp;&nbsp;&nbsp;<h5 id = "specialText02">{value.duration}</h5></div>
+                                    <div className="card-row">location&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&mdash;&nbsp;&nbsp;&nbsp;<h5 id = "specialText02">{value.location}</h5></div>
+                                    <div className="card-row">role&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&mdash;&nbsp;&nbsp;&nbsp;<h5 id = "specialText02">{value.role}</h5></div>
                                     <div className="card-row">description&nbsp;&mdash;<br/></div>
                                     <div className="card-row"><p className="card-text" id = "specialDescription">{value.description}</p></div>
                                 </div>
