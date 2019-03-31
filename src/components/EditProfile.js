@@ -32,6 +32,7 @@ class EditProfile extends Component {
         this.handleChangeZip = this.handleChangeZip.bind(this);
         this.handleChangeRating = this.handleChangeRating.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.sumbitExperience = this.sumbitExperience.bind(this);
       }
 
       handleChangeName(event) {
@@ -98,6 +99,38 @@ class EditProfile extends Component {
             }
         });
     }
+
+    sumbitExperience() {
+        var exTitle= document.getElementById("title").value;
+        var exRole= document.getElementById("role").value;
+        var exDescription= document.getElementById("description").value;
+        var exLocation= document.getElementById("location").value;
+        var exDuration= document.getElementById("duration").value;
+
+        var experience = {
+            title: exTitle,
+            role: exRole,
+            description: exDescription,
+            location: exLocation,
+            duration: exDuration
+        }
+
+        var userId = firebase.auth().currentUser.uid;
+        firebase.database().ref('Users/' + userId + '/work_experience/'+exTitle).set({
+                    title: exTitle,
+                    role: exRole,
+                    description: exDescription,
+                    location: exLocation,
+                    duration: exDuration
+                },
+                (error) => {
+                    if (error) {
+                      console.log("Error!");
+                    } else {
+                        console.log("Data saved successfully!")
+                    }
+                  });
+    }
     
       handleSubmit(event) {
         alert('Your profile has been updated successfully!');
@@ -143,6 +176,7 @@ class EditProfile extends Component {
 
     render() {
             const post = this.state.profile ? (
+            <div className="CompletePage">
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Name:
@@ -178,6 +212,61 @@ class EditProfile extends Component {
                 </label>
                 <input type="submit" value="Submit" />
             </form>
+
+            <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Add Experience</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                    <i class="fas fa-user prefix grey-text"></i>
+                    <input type="text" id="title" class="form-control validate" />
+                    <label data-error="wrong" data-success="right" for="form34">Title</label>
+                    </div>
+
+                    <div class="md-form mb-5">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <input type="text" id="role" class="form-control validate" />
+                    <label data-error="wrong" data-success="right" for="form29">Role</label>
+                    </div>
+
+                    <div class="md-form mb-5">
+                    <i class="fas fa-tag prefix grey-text"></i>
+                    <input type="text" id="description" class="form-control validate" />
+                    <label data-error="wrong" data-success="right" for="form32">Description</label>
+                    </div>
+
+                    <div class="md-form mb-5">
+                    <i class="fas fa-tag prefix grey-text"></i>
+                    <input type="text" id="location" class="form-control validate" />
+                    <label data-error="wrong" data-success="right" for="form32">Location</label>
+                    </div>
+
+                    <div class="md-form mb-5">
+                    <i class="fas fa-tag prefix grey-text"></i>
+                    <input type="text" id="duration" class="form-control validate" />
+                    <label data-error="wrong" data-success="right" for="form32">Duration</label>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-unique" onClick={this.sumbitExperience}>Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="text-center">
+            <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalContactForm">Add Experience</a>
+            </div>
+            </div>
             ):(
                 <div className="center">Loading ...</div>
             )
