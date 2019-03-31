@@ -3,13 +3,18 @@ body {
   padding:0;
   background: linear-gradient(to bottom, rgba(96, 150, 186, 1), rgba(220, 225, 222, 1)) fixed no-repeat;
 }
-  
+.italic-name{
+  margin-top: 3.5vw;
+  font-family: 'Dancing Script', cursive;
+  font-size: 400%;
+  margin-bottom: 3vw;
+}
   .user_card {
     height: 400px;
     width: 350px;
     margin-top: 170px;
     margin-bottom: auto;
-    background: rgba(163, 206, 241, 1);
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     position: relative;
     display: flex;
     justify-content: center;
@@ -27,7 +32,7 @@ body {
     width: 170px;
     top: -75px;
     border-radius: 50%;
-    background: rgba(39, 76, 119, 1);
+    background-image: linear-gradient(-135deg, #667eea 0%, #764ba2 100%);
     padding: 10px;
     text-align: center;
   }
@@ -40,18 +45,7 @@ body {
   .form_container {
     margin-top: 100px;
   }
-  .login_btn {
-    width: 100%;
-    background: rgba(96, 150, 186, 1) !important;
-    color: white !important;
-  }
-  .login_btn:focus {
-    box-shadow: none !important;
-    outline: 0px !important;
-  }
-  .login_container {
-    padding: 0 2rem;
-  }
+  
   .input-group-text {
     background: #c0392b !important;
     color: white !important;
@@ -65,5 +59,53 @@ body {
   }
   .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
     background-color: #c0392b !important;
+  }
+  
+  .google-button {
+    height: 40px;
+    border-width: 0;
+    background: white;
+    color: #737373;
+    border-radius: 1vw;
+    white-space: nowrap;
+    box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.05);
+    transition-property: background-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+    padding: 0;
+    
+    &:focus,
+    &:hover {
+      box-shadow: 1px 4px 5px 1px rgba(0,0,0,0.1);
+    }
+    
+    &:active {
+      background-color: #e5e5e5;
+      box-shadow: none;
+      transition-duration: 10ms;
+    }
+  }
+      
+  .google-button__icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 8px 0 8px 8px;
+    width: 18px;
+    height: 18px;
+    font-size: small;
+    box-sizing: border-box;
+  }
+  
+  .google-button__icon--plus {
+    width: 27px;
+  }
+  
+  .google-button__text {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 12px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto',arial,sans-serif;
   }
   
