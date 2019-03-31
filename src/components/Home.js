@@ -75,7 +75,7 @@ class Home extends Component {
     render() {
             return(
             <div className="home">
-                <BrowserRouter><Navbar /></BrowserRouter>
+                <Navbar />
                 <div className = "homepage">
                     <p id = "myteams">
                         My Teams

@@ -61,7 +61,7 @@ class Navbar extends Component {
             </Link>
         </li>
         {/* Experimental Code Below */}
-        <li className="nav-item">
+        {/* <li className="nav-item">
             <Link to={"/profile/"+this.state.userid} className="nav-link">
                 <i className="fas fa-envelope fa-lg"></i>
             </Link>
@@ -75,7 +75,7 @@ class Navbar extends Component {
             <Link to={"/editprofile/"+this.state.userid} className="nav-link">
                 <i className="fas fa-envelope fa-lg"></i>
             </Link>
-        </li>
+        </li> */}
         {/* Experimental Code Above */}
 
     <li className="nav-item dropdown">
