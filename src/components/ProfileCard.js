@@ -16,6 +16,7 @@ class ProfileCard extends Component {
             console.log(snapshot.val());
             let user= await snapshot.val();
             this.setState({
+                // TODO: ERROR IS CAUSED HERE
                 id: this.props.id, 
                 name: user.name,
                 email: user.email,
