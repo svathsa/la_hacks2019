@@ -7,13 +7,19 @@
     flex-direction: column;
     justify-content: flex-start;
 }
+.profile-photo{
+    padding: 1vw;
 
+    border-radius: 50%;
+}
 #profile-head{
     display: flex;
-    background-color: rgb(27, 82, 128);
     flex-direction: row;
 }
-
+.profile-workexp-title{
+    margin-top: 10vh;
+    background: linear-gradient(to bottom, rgba(7,49,84,1) 0%, rgba(96, 150, 186, 1)  100%);
+}
 #photo-name-role{
     display: flex;
     flex-direction: row;
@@ -35,12 +41,25 @@ h2{
     color: white;
 }
 .card{
-    background-color: rgb(35, 83, 83);
     border-radius: 10px;
-    box-shadow: 1px;
     padding: 10px 20px;
 }
+#special-work-title{
+    color: white;
+}
+.card.workexp-special-card{
+    background: linear-gradient(to bottom, rgba(7,49,84,1) 0%, rgba(96, 150, 186, 1) 100%);
+}
+.card.biography-card{
+    background: linear-gradient(to bottom, rgba(7,49,84,1) 0%, rgba(96, 150, 186, 1)  100%);
 
+}
+.card.skills-card{
+    background: linear-gradient(to bottom, rgba(7,49,84,1) 0%, rgba(96, 150, 186, 1)  100%);    
+}
+.card.profile-head-card{
+      background: linear-gradient(to bottom,  rgba(96, 150, 186, 1), rgba(7,49,84,1) 0% 100%);   
+}
 .profile-photo{
     width:15%;
     height:100%;;
@@ -141,4 +160,15 @@ h2{
 #specialText02{
     font-family: 'Cairo', sans-serif;
     font-weight: lighter;
+}
+#specialDescription{
+    border: 1px double white;
+    padding: 5px;
+    border-radius: 5px;
+    padding-right: 5px;
+    width: 100vh;
+    text-align: left;
+    margin-top: 5px;
+    font-size: small;
+    font-family: 'Courier New', Courier, monospace;
 }

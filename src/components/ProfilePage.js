@@ -69,7 +69,7 @@ class ProfilePage extends Component {
                     return <div>{value}</div>;
                 })}</p>
                 <p>{this.state.profile.zip}</p> */}
-                <div className="card" id="profile-head">
+                <div className="card profile-head-card" id="profile-head">
                     <div id="photo-name-role">
                         <img src={this.state.profile.photoURL} className="profile-photo"/>
                         <div className="name-profile">
@@ -89,7 +89,7 @@ class ProfilePage extends Component {
                 <div className="profile-body">
                     <div className="profile-credentials-skill">
                         <div className="cardContainer">
-                        <div className="card" id="profile-credentials">
+                        <div className="card biography-card" id="profile-credentials">
                             <div className="card-row"><h3>Bio</h3></div>
                             <div className="card-row"><i class="fas fa-clock">&nbsp;&nbsp;</i>Age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;{this.state.profile.age}</div>
                             <div className="card-row"><i class="fas fa-map-marked-alt">&nbsp;&nbsp;</i>Location&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;{this.state.profile.city}</div>
@@ -97,29 +97,33 @@ class ProfilePage extends Component {
                         </div>
                         </div>
                         <div className="cardContainer">
-                        <div className ="card" id="profile-skill">
+                        <div className ="card skills-card" id="profile-skill">
                         <div className="card-row"><h3>Skills</h3></div>
                         <div className="work-experience">{mapObject(this.state.profile.skills, function (key, value) {
-                                return <div className="card-row" key={key} >{value.name}</div>;
+                                return <div className="card-row" key={key} > &#9658;&nbsp;&nbsp;{value.name}</div>;
                             })}</div>
                         </div> 
                         </div>
                         
                         </div>
                     <div className="profile-workexp">
-                    <div className="profile-workexp-title"><h1>Work Experience</h1></div>
+                    <div className = "cardContainer">
+                    <div className="card profile-workexp-title"><h1 id = "special-work-title">Work Experience</h1></div>
                     <div>
+                        </div>
                     
                     {
                     
                     mapObject(this.state.profile.work_experience, function (key, value) {
                     return <div className="profile-workexp-card" key={key}>
-                                <div className="card">
+                                <div className="card workexp-special-card">
                                 <div className="card-body">
                                     <div className="card-row">project&nbsp;&nbsp;&nbsp;&mdash;&nbsp;<h5 id = "specialText02">{value.title}</h5></div>
                                     <div className="card-row">duration&nbsp;&mdash;&nbsp;<h5 id = "specialText02">{value.duration}</h5></div>
                                     <div className="card-row">location&nbsp;&nbsp;&mdash;&nbsp;<h5 id = "specialText02">{value.location}</h5></div>
-                                    <div className="card-row"><p className="card-text">{value.description}.</p></div>
+                                    <div className="card-row">role&nbsp;&nbsp;&mdash;&nbsp;<h5 id = "specialText02">{value.role}</h5></div>
+                                    <div className="card-row">description&nbsp;&mdash;<br/></div>
+                                    <div className="card-row"><p className="card-text" id = "specialDescription">{value.description}</p></div>
                                 </div>
                                 </div>
                             </div>
