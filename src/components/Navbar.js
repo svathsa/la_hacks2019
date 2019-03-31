@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import firebase from 'firebase';
+import base, {firebaseApp} from '../components/Firebase/firebase'
 import './Navbar.css'
 
 class Navbar extends Component {
+    state = {
+        userid: null
+    }
+    componentDidMount() {
+        firebase.auth().onAuthStateChanged((user) => {
+            this.setState({
+                userid: user.uid
+            });
+        })
+    }
     render() {
         return(
             <div className="navbar">
@@ -27,16 +39,14 @@ class Navbar extends Component {
         <li className="nav-item">
             <a
             className="nav-link"
-            href="{{ url('/login') }}">
+            href="#">
                 <i className="fas fa-bell fa-lg"></i>
             </a>   
         </li>
         <li className="nav-item">
-            <a
-            className="nav-link"
-            href="{{ url('/register') }}">
+            <Link to="/home" className="nav-link">
                 <i className="fas fa-envelope fa-lg"></i>
-            </a>
+            </Link>
         </li>
 
     <li className="nav-item dropdown">
@@ -54,9 +64,10 @@ class Navbar extends Component {
     className="dropdown-menu dropdown-menu-right"
     aria-labelledby="navbarDropdownMenuLink">
 
-    <a
-    className="dropdown-item"
-    href="#">View profile</a>
+    <a href={"/profile/"+this.state.userid}
+    className="dropdown-item">
+    View profile
+    </a>
 
     <a
     className="dropdown-item"

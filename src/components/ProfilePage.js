@@ -14,8 +14,6 @@ function mapObject(object, callback) {
     }
   }
 
-
-
 class ProfilePage extends Component {
     state = {
         profile: null
@@ -134,7 +132,11 @@ class ProfilePage extends Component {
                 </div>
             </div>
         ) : (
-            <div className="center">Loading profile...</div>
+            <div className="center">
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            </div>
         )
         return (
             <div>

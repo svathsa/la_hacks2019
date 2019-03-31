@@ -10,6 +10,7 @@ import BigProfilePage from './components/BigProfilePage'
 import BigEditProfile from './components/BigEditProfile'
 // Will be used to implement Redux
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Navbar from './components/Navbar';
 
 class App extends Component {
   render() {

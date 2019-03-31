@@ -1,8 +1,8 @@
-.login {
-    margin: 0;
-    padding: 0;
-    background-image: linear-gradient(to right, rgba(39, 76, 119, 1), rgba(63, 119, 184)) !important;
-  }
+body {
+  margin: 0;
+  padding:0;
+  background: linear-gradient(to bottom, rgba(96, 150, 186, 1), rgba(220, 225, 222, 1)) fixed no-repeat;
+}
   
   .user_card {
     height: 400px;
