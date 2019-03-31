@@ -58,11 +58,24 @@ class Home extends Component {
                         console.log(value);
                         console.log("UID "+user.uid);
                         console.log("Lead "+value.lead);
-
                         if(value.lead==user.uid){
                             refer.addDBTeam({key, value});
                         }
-                             
+                        else {
+                            var found = false;
+                            mapObject(value.roles, function(key, value) {
+                                mapObject(value, function(key, value) {
+                                    if (value == user.uid)
+                                    {
+                                        found = true;
+                                    }
+                                })
+                            })
+                        }
+                        if (found)
+                        {
+                            refer.addDBTeam({key, value});  
+                        }  
                     })
                 });
             } else {

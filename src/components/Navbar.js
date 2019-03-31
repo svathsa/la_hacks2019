@@ -33,7 +33,7 @@ class Navbar extends Component {
                 <nav className="navbar-nav navbar-expand-lg">
                 
                     <ul className="navbar-nav">
-                        <Link to="/home" className="nav-link" href="#"><span className ="homebrand">Filmly Home</span></Link>
+                        <Link to="/home" className="nav-link" href="#"><span className ="homebrand">Filmly</span></Link>
                     </ul>
                 
                     <button

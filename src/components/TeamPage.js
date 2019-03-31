@@ -89,13 +89,9 @@ class TeamPage extends Component {
                 <div class = "teamheader">
                     <h1>{this.state.name}</h1>  
                 </div>
-            
-            <div class = "status">
-                <p>Finalized
-                </p>
-            </div>
+            <div class = "status"><i class="fas fa-check"></i></div>
 
-                <ul class="cards">
+            <ul class="cards">
                 
 
                 {console.log("State")}
