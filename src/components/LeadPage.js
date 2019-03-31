@@ -3,6 +3,8 @@ import Navbar from './Navbar';
 import './LeadPage.css';
 import firebase from 'firebase';
 import RoleCard from './RoleCard';
+import SuggestionProfileCard from './SuggestionProfileCard';
+import SuggestionPane from './SuggestionPane';
 
 function mapObject(object, callback) {
     if(object != null){
@@ -49,6 +51,7 @@ class LeadPage extends Component {
 
                     </div>
                     <div className="main-panel">
+                    <SuggestionPane role="role1" teamID={this.state.teamID}/>
                     </div>
                 </div>
             </div>
