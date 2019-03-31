@@ -60,6 +60,18 @@ class Navbar extends Component {
                 <i className="fas fa-envelope fa-lg"></i>
             </Link>
         </li>
+        {/* Experimental Code Below */}
+        {/* <li className="nav-item">
+            <Link to={"/profile/"+this.state.userid} className="nav-link">
+                <i className="fas fa-envelope fa-lg"></i>
+            </Link>
+        </li>
+        <li className="nav-item">
+            <Link to={"/editprofile/"+this.state.userid} className="nav-link">
+                <i className="fas fa-envelope fa-lg"></i>
+            </Link>
+        </li> */}
+        {/* Experimental Code Above */}
 
     <li className="nav-item dropdown">
     <a
@@ -80,10 +92,13 @@ class Navbar extends Component {
     className="dropdown-item">
     View profile
     </a>
+
     {/* Component wont render if I use a Link to tag  */}
-    <a
-    className="dropdown-item"
-    href="#">Edit profile</a>
+
+    <a href={"/editprofile/"+this.state.userid}
+    className="dropdown-item">
+    Edit profile
+    </a>
 
     <div
     className="dropdown-divider"></div>
