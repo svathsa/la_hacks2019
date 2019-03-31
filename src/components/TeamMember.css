@@ -4,7 +4,7 @@
     color: white;
     font-size: 300px;
     font-family: 'Roboto', sans-serif;
-    font-weight: 900;
+    font-weight: bolder;
     
   }
   .teamimage {
@@ -79,10 +79,10 @@
   }
   .card__title {
     color: white;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto', sans-serif;
     overflow: hidden;
+    font-weight: bolder;
     font-size: 1.25rem;
-    font-weight: 300;
   }
   .card__text {
     font-family: 'Raleway', sans-serif;

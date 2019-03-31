@@ -66,6 +66,9 @@ input[type=submit] {
 input[type=submit]:hover {
     opacity:1;
 }
+.close{
+    width: 60px;
+}
 #experienceButton {
     background-color: rgba(39, 76, 119, 1);
     width: 200px;
