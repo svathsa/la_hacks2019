@@ -9,6 +9,7 @@ class ProfileCard extends Component {
     constructor(props){
 		super(props);
         this.state={id: this.props.id, name: "", email: "", photoURL: ""};
+        this.removeFromTeam= this.removeFromTeam.bind(this);
     }
     
     componentDidMount(){
@@ -22,6 +23,10 @@ class ProfileCard extends Component {
                 photoURL: user.photoURL
             })
         });
+    }
+
+    removeFromTeam(){
+
     }
 
     render() {
@@ -43,7 +48,7 @@ class ProfileCard extends Component {
                         </a>
                     </div>
                     <div className="col-md-1">
-                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-trash" onClick={refer.removeFromTeam}></i>
                     </div>
                 </div>
         )
