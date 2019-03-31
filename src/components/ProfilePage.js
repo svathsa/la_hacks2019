@@ -14,8 +14,6 @@ function mapObject(object, callback) {
     }
   }
 
-
-
 class ProfilePage extends Component {
     state = {
         profile: null
