@@ -15,7 +15,7 @@ function mapObject(object, callback) {
         
     }
   }
-  
+
 class ProfileCard extends Component {
 
     constructor(props){
@@ -45,9 +45,10 @@ class ProfileCard extends Component {
             var found = false;
             var goldenkey;
             mapObject(result, function (key, value) {
-                if(value==refer.state.id)
+                if(value==refer.state.id){
                     found=true;
                     goldenkey=key;
+                }
                 })
             if(found==true)
             {
