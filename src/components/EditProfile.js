@@ -287,7 +287,7 @@ class EditProfile extends Component {
 
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
-                    <button class="btn btn-unique" onClick={this.submitExperience}>Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
+                    <button class="btn btn-unique update-profile-submit " data-dismiss="modal"  onClick={this.submitExperience}>Submit <i class="fas fa-paper-plane-o ml-1"></i></button>
                 </div>
                 </div>
             </div>
