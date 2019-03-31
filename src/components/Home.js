@@ -26,11 +26,21 @@ class Home extends Component {
 
     }
 
-    
-    addTeam = (team) => {
+    addTeam = (obj) => {
         
-    if(!this.state.teams.includes(team)){
-    let teams = [...this.state.teams, team];
+        if(!this.state.teams.includes(obj)){
+        let teams = [...this.state.teams, obj];
+        this.setState({
+            teams
+        });
+        window.location.reload();
+        }
+        }
+
+    addDBTeam = (obj) => {
+        
+    if(!this.state.teams.includes(obj)){
+    let teams = [...this.state.teams, obj];
     this.setState({
         teams
     });
@@ -50,7 +60,7 @@ class Home extends Component {
                         console.log("Lead "+value.lead);
 
                         if(value.lead==user.uid){
-                            refer.addTeam(value);
+                            refer.addDBTeam({key, value});
                         }
                              
                     })
