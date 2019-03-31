@@ -1,0 +1,15 @@
+.lead-page-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.side-panel{
+    height: 800px; /* or any value */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+
+}
+.main-panel{
+    width: 70%;
+}

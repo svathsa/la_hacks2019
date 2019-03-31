@@ -1,18 +1,21 @@
-/* #profile-card{
+#profile-card{
     display: flex;
     flex-direction: row;
+    width: 100%;
     justify-content: space-around;
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
 }
-*/
+
 .profile-card-image{
-    width: 7vw;
-    height: 7vw;
+    width: 20px;
+    height: 20px;
     object-fit: cover;
     border-radius: 50%;
 } 
+
+
 
 /* name width 60% */

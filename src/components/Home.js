@@ -1,25 +1,68 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar'
 import TeamButtons from './TeamButton'
+import firebase from 'firebase'
 import AddTeam from './AddTeam'
 import './Home.css'
 
-class Home extends Component {
-    state = {
-        teams: [
-          {'id':1, 'name':'Suraj\'s Team'},
-          {'id':2, 'name':'Neeraj\'s Team'}
-        ]
+function mapObject(object, callback) {
+    if(object != null){
+    return Object.keys(object).map(function (key) {
+      return callback(key, object[key]);
+    });
+    }else{
+        
     }
+  }
+
+class Home extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            teams: []
+        };
+        this.addTeam = this.addTeam.bind(this)
+
+    }
+
+    
     addTeam = (team) => {
-    team.id = Math.random();
+        
+    if(!this.state.teams.includes(team)){
     let teams = [...this.state.teams, team];
     this.setState({
         teams
     });
     }
+    }
+
+    componentDidMount(){
+        const refer= this;
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                firebase.database().ref('Teams/').once('value').then(async(snapshot)=> {
+                    console.log(snapshot.val());
+                    let teamResult= await snapshot.val();
+                    mapObject(teamResult, function (key, value) {
+                        console.log(value);
+                        console.log("UID "+user.uid);
+                        console.log("Lead "+value.lead);
+
+                        if(value.lead==user.uid){
+                            refer.addTeam(value);
+                        }
+                             
+                    })
+                });
+            } else {
+              // No user is signed in.
+            }
+          });
+    }
+
     render() {
-        return(
+            return(
             <div className="home">
                 <Navbar />
                 <div className = "homepage">
@@ -35,26 +78,6 @@ class Home extends Component {
                                 + Add Team
                             </button> */}
                     </div>
-                    <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div className="modal-dialog modal-dialog-centered" role="document">
-                            <div className="modal-content">
-                                <div className="modal-header">
-                                    <h5 className="modal-title" id="exampleModalCenterTitle">Team Name</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div className="modal-body">
-                                    <form>
-                                        <div className="form-group">
-                                        <input type="text" className="form-control" id="message-name" />
-                                        </div>
-                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Create Team</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         )
@@ -62,3 +85,4 @@ class Home extends Component {
 }
 
 export default Home
+

@@ -359,7 +359,11 @@ class EditProfile extends Component {
             </div>
             
             ):(
-                <div className="center">Loading ...</div>
+                <div className="center">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
             )
             return (
                 <div>

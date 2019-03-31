@@ -21,7 +21,7 @@ const TeamButtons = ({teams}) => {
             return (
                 <div className="container teamButtonContainer buttonwrapper" key={team.id}>
                     {/* <span className="center teamNameButton" id="teamButtonText" onClick={() => {alert(team.id)}}>{team.name}</span> */}
-                    <Link to={"/team/"+team.id} className="center teamNameButton" id="teamButtonText">{team.name}</Link>
+                    <Link to={"/teampage/"+team.id} className="center teamNameButton" id="teamButtonText">{team.name}</Link>
                 </div>
             )
         })
