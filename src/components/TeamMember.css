@@ -7,22 +7,6 @@
     font-weight: 900;
     
   }
-  .status {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    width: 200px; 
-    background-color: rgb(55, 109, 96); 
-    border: none;
-    color: rgba(220, 225, 222, 1); 
-    padding: 7px 28px;
-    text-align: center;
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
-    
-  }
   .teamimage {
     height: 180px;
     max-width: 100%;
