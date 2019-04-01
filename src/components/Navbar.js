@@ -33,7 +33,7 @@ class Navbar extends Component {
                 <nav className="navbar-nav navbar-expand-lg">
                 
                     <ul className="navbar-nav">
-                        <Link to="/home" className="nav-link" href="#"><span className ="homebrand">Filmly</span></Link>
+                        <Link to="/home" key="/home" className="nav-link" href="#"><span className ="homebrand">Filmly</span></Link>
                     </ul>
                 
                     <button
@@ -60,22 +60,10 @@ class Navbar extends Component {
                             </a>   
                         </li>
                      <li className="nav-item">
-                            <Link to="/home" className="nav-link">
+                            <Link to="/home" key="/home" className="nav-link">
                     <i className="fas fa-envelope fa-lg"></i>
             </Link>
         </li>
-        {/* Experimental Code Below */}
-        {/* <li className="nav-item">
-            <Link to={"/profile/"+this.state.userid} className="nav-link">
-                <i className="fas fa-envelope fa-lg"></i>
-            </Link>
-        </li>
-        <li className="nav-item">
-            <Link to={"/editprofile/"+this.state.userid} className="nav-link">
-                <i className="fas fa-envelope fa-lg"></i>
-            </Link>
-        </li> */}
-        {/* Experimental Code Above */}
 
     <li className="nav-item dropdown">
     <a
@@ -92,17 +80,17 @@ class Navbar extends Component {
     className="dropdown-menu dropdown-menu-right"
     aria-labelledby="navbarDropdownMenuLink">
 
-    <a href={"/profile/"+this.state.userid}
-    className="dropdown-item">
+    <Link to={"/profile/"+this.state.userid}
+    className="dropdown-item"
+    key={"/profile/"+this.state.userid}>
     View profile
-    </a>
+    </Link>
 
-    {/* Component wont render if I use a Link to tag  */}
-
-    <a href={"/editprofile/"+this.state.userid}
-    className="dropdown-item">
+    <Link to={"/editprofile/"+this.state.userid}
+    className="dropdown-item"
+    key={"/editprofile/"+this.state.userid}>
     Edit profile
-    </a>
+    </Link>
 
     <div
     className="dropdown-divider"></div>

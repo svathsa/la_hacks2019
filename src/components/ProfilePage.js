@@ -3,7 +3,6 @@ import Navbar from './Navbar'
 import firebase from 'firebase';
 import base, {firebaseApp} from '../components/Firebase/firebase'
 import './ProfilePage.css';
-import axios from 'axios';
 
 function mapObject(object, callback) {
     if(object != null){

@@ -23,11 +23,11 @@ class SingleTeamButton extends Component {
         var refer=this;
         var singleteambutton = (refer.props.team.value.lead == refer.state.userid) ?
             (
-                <Link to={"/leadpage/"+refer.props.team.key} className="center teamNameButton" id="teamButtonText">{refer.props.team.value.name}</Link>
+                <Link to={"/leadpage/"+refer.props.team.key} key={"/leadpage/"+refer.props.team.key} className="center teamNameButton" id="teamButtonText">{refer.props.team.value.name}</Link>
             )
         : 
             (
-                <Link to={"/teampage/"+refer.props.team.key} className="center teamNameButton" id="teamButtonText">{refer.props.team.value.name}</Link>
+                <Link to={"/teampage/"+refer.props.team.key} key={"/teampage/"+refer.props.team.key} className="center teamNameButton" id="teamButtonText">{refer.props.team.value.name}</Link>
             )
     return(
         <div className="container teamButtonContainer buttonwrapper">

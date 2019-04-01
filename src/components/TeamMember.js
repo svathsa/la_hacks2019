@@ -29,7 +29,7 @@ class TeamMember extends Component {
         return(
             <div class="teamcard">
                 <img class="card__image teamimage" src={this.state.photoURL} alt=""/>
-                <Link to={"/profile/"+this.state.id}>
+                <Link to={"/profile/"+this.state.id} key={"/profile/"+this.state.id}>
                 <div class="card__content">
                     <div class="card__title">{this.state.name}</div>
                     <p class="card__text">{this.state.role}</p>

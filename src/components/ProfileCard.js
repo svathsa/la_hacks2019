@@ -71,7 +71,7 @@ class ProfileCard extends Component {
                             <img className="profile-card-image" src={this.state.photoURL} alt="Card image cap" />
                     </div>
                     <div className="col-md-8">
-                        <Link to={"/profile/"+refer.state.id}><p className="card-text">{this.state.name}</p></Link>
+                        <Link to={"/profile/"+refer.state.id} key={"/profile/"+refer.state.id}><p className="card-text">{this.state.name}</p></Link>
                     </div>
                     <div className="col-md-1">
                         <a href={text}>

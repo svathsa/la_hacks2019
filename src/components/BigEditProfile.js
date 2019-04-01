@@ -9,7 +9,7 @@ class BigEditProfile extends Component {
         return(
             <div className="parent-container">
                 <Navbar />
-                <EditProfile id = {id} />
+                <EditProfile id = {id} key={id} />
             </div>
         )
     }

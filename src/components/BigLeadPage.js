@@ -11,7 +11,7 @@ class BigLeadPage extends Component {
             <div className="parent-container">
                 <Navbar />
                 <div className = "lead-page-container">
-                <LeadPage teamid = {id} />
+                <LeadPage teamid = {id} key = {id} />
                 </div>
             </div>
         )

@@ -10,7 +10,7 @@ class BigProfilePage extends Component {
             <div className="parent-container">
                 <Navbar />
                 <div className = "profile-page-container">
-                <ProfilePage id = {id} />
+                <ProfilePage id = {id} key={id} />
                 </div>
             </div>
         )
